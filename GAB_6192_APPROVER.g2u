@@ -1,0 +1,211 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("Setup Approver")
+Gui.Form..Size(1024,720)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(Unload,Unload)
+Gui.Form.GsGridCApprover.Create(GsGridControl)
+Gui.Form.GsGridCApprover.Enabled(True)
+Gui.Form.GsGridCApprover.Visible(True)
+Gui.Form.GsGridCApprover.Zorder(0)
+Gui.Form.GsGridCApprover.Size(996,663)
+Gui.Form.GsGridCApprover.Position(14,18)
+Gui.Form.GsGridCApprover.Event(RowCellClick,GSGrid_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.i1.Declare
+V.Local.bExist.Declare
+V.Local.sSQL.Declare
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+F.ODBC.Connection!conC.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, PART CHAR(20) NOT NULL, DESCRIPTION VARCHAR(250), SO CHAR(7) NOT NULL, PO CHAR(30), PO_LINE CHAR(4) NOT NULL, QTY NUMERIC(13,4), DRAWING VARCHAR(20), DRAWING_REV VARCHAR(5), OUTSIDE_NO VARCHAR(50), COUNTRY VARCHAR(15), LOT CHAR(15), HARD_RESULT VARCHAR(50), HARD_SPEC VARCHAR(20), THREAD_DTL VARCHAR(50), THREAD_STW VARCHAR(50), CREATED_BY CHAR(8), CREATED_DATE DATE, APPROVED_BY CHAR(8), APPROVED_DATE DATE, PRIMARY KEY  ( WO, SUFFIX, WO_DATE ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC_ADD",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC_ADD ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, SEQ NUMERIC(4,0) NOT NULL, PART CHAR(20) NOT NULL, ADD_ID NUMERIC(4,0) NOT NULL, PARENT_WO CHAR(6), PARENT_SUFFIX CHAR(3), PRIMARY KEY  ( WO, SUFFIX, WO_DATE, SEQ ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC_COAT",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC_COAT ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, SEQ NUMERIC(4,0) NOT NULL, PART CHAR(20), COATING_ID NUMERIC(4,0), PARENT_WO CHAR(6), PARENT_SUFFIX CHAR(3), PRIMARY KEY  ( WO, SUFFIX, WO_DATE, SEQ ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC_MAT",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC_MAT ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, SEQ NUMERIC(4,0) NOT NULL, PART CHAR(20), MDS_ID NUMERIC(4,0), PARENT_WO CHAR(6), PARENT_SUFFIX CHAR(3), PRIMARY KEY  ( WO, SUFFIX, WO_DATE, SEQ ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC_MT16",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC_MT16 ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, SEQ NUMERIC(4,0) NOT NULL, PART CHAR(20) NOT NULL, MT16_ID NUMERIC(4,0) NOT NULL, PARENT_WO CHAR(6), PARENT_SUFFIX CHAR(3), PRIMARY KEY  ( WO, SUFFIX, WO_DATE, SEQ ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC_NDE",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC_NDE ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, SEQ NUMERIC(4,0) NOT NULL, PART CHAR(20) NOT NULL, NDE_ID NUMERIC(4,0) NOT NULL, PARENT_WO CHAR(6), PARENT_SUFFIX CHAR(3), PRIMARY KEY  ( WO, SUFFIX, WO_DATE, SEQ ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC_PRM",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC_PRM ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, SEQ NUMERIC(4,0) NOT NULL, PART CHAR(20) NOT NULL, PREMIUM_ID NUMERIC(4,0) NOT NULL, PARENT_WO CHAR(6), PARENT_SUFFIX CHAR(3), PRIMARY KEY  ( WO, SUFFIX, WO_DATE, SEQ ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC_RTV",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC_RTV ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, SEQ NUMERIC(4,0) NOT NULL, PART CHAR(20) NOT NULL, RTV_ID NUMERIC(4,0) NOT NULL, PARENT_WO CHAR(6), PARENT_SUFFIX CHAR(3), PRIMARY KEY  ( WO, SUFFIX, WO_DATE, SEQ ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COC_QCP",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COC_QCP ( WO CHAR(6) NOT NULL, SUFFIX CHAR(3) NOT NULL, WO_DATE DATE NOT NULL, SEQ NUMERIC(4,0) NOT NULL, PART CHAR(20) NOT NULL, QCP_ID NUMERIC(4,0) NOT NULL, PARENT_WO CHAR(6), PARENT_SUFFIX CHAR(3), PRIMARY KEY  ( WO, SUFFIX, WO_DATE, SEQ ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_ADD",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_ADD ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, ADD_SPEC VARCHAR(20), REV VARCHAR(5), SUPPLIER VARCHAR(20), PO VARCHAR(5), CERTIFICATE VARCHAR(20), PRIMARY KEY  ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_APPROVER",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_APPROVER ( GS_USER CHAR(8) NOT NULL, NAME VARCHAR(250), PRIMARY KEY  ( GS_USER ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_COATING",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_COATING ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, CSP VARCHAR(20), REV VARCHAR(5), DESCRIPTION VARCHAR(50), SUPPLIER VARCHAR(50), PO VARCHAR(20), CERTIFICATE BIT NOT NULL, CSP_REMARK VARCHAR(50), PRIMARY KEY  ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_DRAWING",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_DRAWING ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, DRAWING VARCHAR(20), REV VARCHAR(5), PRIMARY KEY  ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_HARDNESS",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_HARDNESS ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, HARDNESS_RESULT VARCHAR(50), HARDNESS_SPEC VARCHAR(20), PRIMARY KEY  ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_MATERIAL",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_MATERIAL ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, MDS VARCHAR(20), REV VARCHAR(20), DESCRIPTION VARCHAR(250), CMS VARCHAR(20), CMS_REV VARCHAR(20), SUPPLIER VARCHAR(50), PO VARCHAR(20), HEAT VARCHAR(20), MDS_REMARK VARCHAR(50), CMS_REMARK VARCHAR(50), PRIMARY KEY ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_NDE",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_NDE ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, NDE VARCHAR(20), REV VARCHAR(5), NDE_METHOD VARCHAR(50), SUPPLIER VARCHAR(50), PO VARCHAR(20), INSP_LVL VARCHAR(20), EXPIRY_DATE DATE, NDE_REMARK VARCHAR(20), PRIMARY KEY ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_OUTSIDE",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_OUTSIDE ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, OUTSIDE VARCHAR(20), PRIMARY KEY ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_PREMIUM",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_PREMIUM ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, PREMIUM VARCHAR(20), REV VARCHAR(5), SUPPLIER VARCHAR(20), PO VARCHAR(20), CERTIFICATE VARCHAR(20), PRIMARY KEY ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_QCP",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_QCP ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, QCP VARCHAR(20), QCP_REV VARCHAR(5), INSP VARCHAR(20), INSP_REV VARCHAR(5), MN15 VARCHAR(20), MN15_REV VARCHAR(20), TPI_DATE DATE, RON_ID VARCHAR(20), SUPPLIER VARCHAR(50), PO VARCHAR(20), CERTIFICATE VARCHAR(20), PRIMARY KEY ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_RTV",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_RTV ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, RTV VARCHAR(50), PRIMARY KEY ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_THREAD",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_THREAD( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, THREAD_DETAIL VARCHAR(50), THREAD_STW VARCHAR(50), PRIMARY KEY ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GAB_6192_MT16",V.Local.bExist)
+F.Intrinsic.Control.If(V.Local.bExist,=,False)
+	F.ODBC.Connection!conx.Execute("CREATE TABLE GAB_6192_MT16 ( PART CHAR(20) NOT NULL, ID NUMERIC(4,0) NOT NULL, MT16 VARCHAR(20), REV VARCHAR(5), SUPPLIER VARCHAR(20), PO VARCHAR(5), CERTIFICATE VARCHAR(20), PRIMARY KEY ( PART, ID ));")
+F.Intrinsic.Control.EndIf
+
+F.Data.DataTable.Create("dtApprover",True)
+F.Data.DataTable.AddColumn("dtApprover","GS_User","String")
+F.Data.DataTable.AddColumn("dtApprover","Name","String")
+F.Data.DataTable.AddColumn("dtApprover","Approver","Bit",0)
+
+F.Intrinsic.String.Build("Select Rtrim(GS_User) as GS_User, First_Name+' '+Middle_Name+' '+Last_Name as Name From User_Information where company = '' or company = '{0}'", V.Caller.CompanyCode, V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtTemp","Conc",V.Local.sSQl)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+	F.Data.DataTable.AddRow("dtApprover","GS_User",V.DataTable.dtTemp(V.Local.i1).GS_User!FieldValTrim,"Name",V.DataTable.dtTemp(V.Local.i1).Name!FieldValTrim)
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Data.DataTable.Close("dtTemp")
+
+F.Data.Dictionary.CreateFromSQL("DicApprover","Conx","Select Rtrim(GS_User), 1 as Approve From GAB_6192_Approver")
+F.Data.Dictionary.SetDefaultReturn("DicApprover",0)
+F.Data.DataTable.FillFromDictionary("dtApprover","dicApprover","GS_User","Approver")
+F.Data.Dictionary.Close("DicApprover")
+
+Gui.Form.GsGridCApprover.AddGridviewFromDatatable("gvApprover","dtApprover")
+Gui.Form.GsGridCApprover.MainView("gvApprover")
+
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","GS_User","HeaderHAlignment","Center")
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","Name","HeaderHAlignment","Center")
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","GS_User","Caption","User ID")
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","Approver","ShowCaption",False)
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","GS_User","AllowEdit",False)
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","Name","AllowEdit",False)
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","Approver","AllowEdit",False)
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","GS_User","ReadOnly",True)
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","Name","ReadOnly",True)
+Gui.Form.GsGridCApprover.SetColumnProperty("gvApprover","Approver","ReadOnly",True)
+
+Gui.Form..Show
+
+Program.Sub.Main.End
+
+Program.Sub.GSGrid_Click.Start
+V.Local.sSQL.Declare
+
+F.Intrinsic.Control.If(V.Args.Column,=,"Approver")
+	F.Intrinsic.Control.If(V.DataTable.dtApprover(V.Args.RowIndex).Approver!FieldVal,=,0)
+		F.Data.DataTable.SetValue("dtApprover",V.Args.RowIndex,"Approver",1)
+		F.Intrinsic.String.Build("insert into GAB_6192_Approver(GS_User,Name) values('{0}', '{1}')",V.DataTable.dtApprover(V.Args.RowIndex).GS_User!FieldValTrim, V.DataTable.dtApprover(V.Args.RowIndex).Name!FieldValTrim, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.Else
+		F.Data.DataTable.SetValue("dtApprover",V.Args.RowIndex,"Approver",0)
+		F.Intrinsic.String.Build("Delete From GAB_6192_Approver where GS_User = '{0}'",V.DataTable.dtApprover(V.Args.RowIndex).GS_User!FieldValTrim, V.DataTable.dtApprover(V.Args.RowIndex).Name!FieldValTrim, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.GSGrid_Click.End
+
+Program.Sub.Unload.Start
+F.ODBC.Connection!conx.Close
+F.ODBC.Connection!conc.Close
+F.Intrinsic.Control.End
+Program.Sub.Unload.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$dyunus$}$20210303095318938$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0TlH86cjG/r658d3DInwFBguvrslknh/qHvdsA4+ilg28=
+Program.Sub.Comments.End

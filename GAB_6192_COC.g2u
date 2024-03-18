@@ -1,0 +1,1744 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.Form..Create(BaseForm)
+Gui.Form..Caption("CoC")
+Gui.Form..Size(1369,798)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..AlwaysOnTop(False)
+Gui.Form..FontName("Tahoma")
+Gui.Form..FontSize(8.25)
+Gui.Form..ControlBox(True)
+Gui.Form..MaxButton(True)
+Gui.Form..MinButton(True)
+Gui.Form..MousePointer(0)
+Gui.Form..Moveable(True)
+Gui.Form..Sizeable(True)
+Gui.Form..ShowInTaskBar(True)
+Gui.Form..TitleBar(True)
+Gui.Form..Event(UnLoad,Unload)
+Gui.Form.txtWO.Create(TextBox,"",True,100,20,0,21,22,True,0,"Tahoma",8.25,,1)
+Gui.Form.cmdBrowser.Create(Button)
+Gui.Form.cmdBrowser.Enabled(True)
+Gui.Form.cmdBrowser.Visible(True)
+Gui.Form.cmdBrowser.Zorder(0)
+Gui.Form.cmdBrowser.Size(75,23)
+Gui.Form.cmdBrowser.Position(234,20)
+Gui.Form.cmdBrowser.Caption("^")
+Gui.Form.cmdBrowser.FontName("Tahoma")
+Gui.Form.cmdBrowser.FontSize(8.25)
+Gui.Form.cmdBrowser.Event(Click,cmdBrowse_Click)
+Gui.Form.txtSuffix.Create(TextBox,"",True,100,20,0,125,23,True,0,"Tahoma",8.25,,1)
+Gui.Form.lbl1.Create(Label,"WO",True,19,13,0,25,9,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl1.BorderStyle(0)
+Gui.Form.lbl1.FontStyle(True,False,False,False,False)
+Gui.Form.lbl2.Create(Label,"Suffix",True,32,13,0,127,7,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl2.BorderStyle(0)
+Gui.Form.lbl2.FontStyle(True,False,False,False,False)
+Gui.Form.frameHeader.Create(Frame)
+Gui.Form.frameHeader.Enabled(True)
+Gui.Form.frameHeader.Visible(True)
+Gui.Form.frameHeader.Zorder(0)
+Gui.Form.frameHeader.Size(1134,150)
+Gui.Form.frameHeader.Position(13,56)
+Gui.Form.frameHeader.Caption("CoC Header")
+Gui.Form.frameHeader.FontName("Tahoma")
+Gui.Form.frameHeader.FontSize(8.25)
+Gui.Form.frameHeader.SetInternationalID(1)
+Gui.Form.frameHeader.FontStyle(True,False,False,False,False)
+Gui.Form.lbl5.Create(Label,"Part",True,24,13,0,227,11,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl5.BorderStyle(0)
+Gui.Form.lbl5.Parent("frameHeader")
+Gui.Form.lbl5.FontStyle(True,False,False,False,False)
+Gui.Form.lbl13.Create(Label,"Drawing Rev #",True,83,13,0,171,62,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl13.BorderStyle(0)
+Gui.Form.lbl13.Parent("frameHeader")
+Gui.Form.lbl13.FontStyle(True,False,False,False,False)
+Gui.Form.lbl14.Create(Label,"Hardness Result",True,92,13,0,261,63,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl14.BorderStyle(0)
+Gui.Form.lbl14.Parent("frameHeader")
+Gui.Form.lbl14.FontStyle(True,False,False,False,False)
+Gui.Form.lbl12.Create(Label,"Drawing #",True,58,13,0,14,60,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl12.BorderStyle(0)
+Gui.Form.lbl12.Parent("frameHeader")
+Gui.Form.lbl12.FontStyle(True,False,False,False,False)
+Gui.Form.lbl15.Create(Label,"Hardness Specification",True,128,13,0,717,62,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl15.BorderStyle(0)
+Gui.Form.lbl15.Parent("frameHeader")
+Gui.Form.lbl15.FontStyle(True,False,False,False,False)
+Gui.Form.lbl8.Create(Label,"Qty",True,20,13,0,722,11,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl8.BorderStyle(0)
+Gui.Form.lbl8.Parent("frameHeader")
+Gui.Form.lbl8.FontStyle(True,False,False,False,False)
+Gui.Form.txtPOQty.Create(TextBox,"",True,83,20,0,719,30,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtPOQty.Parent("frameHeader")
+Gui.Form.txtPOQty.Locked(True)
+Gui.Form.lbl9.Create(Label,"Lot/Batch",True,56,13,0,814,8,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl9.BorderStyle(0)
+Gui.Form.lbl9.Parent("frameHeader")
+Gui.Form.lbl9.FontStyle(True,False,False,False,False)
+Gui.Form.txtLot.Create(TextBox,"",True,83,20,0,810,29,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtLot.Parent("frameHeader")
+Gui.Form.txtLot.Locked(True)
+Gui.Form.txtPartRev.Create(TextBox,"",True,43,20,0,383,31,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtPartRev.Parent("frameHeader")
+Gui.Form.txtPartRev.Locked(True)
+Gui.Form.lbl6.Create(Label,"Rev",True,22,13,0,387,11,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl6.BorderStyle(0)
+Gui.Form.lbl6.Parent("frameHeader")
+Gui.Form.lbl6.FontStyle(True,False,False,False,False)
+Gui.Form.lbl17.Create(Label,"Thread Size, Type, Weight",True,146,13,0,307,105,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl17.BorderStyle(0)
+Gui.Form.lbl17.Parent("frameHeader")
+Gui.Form.lbl17.FontStyle(True,False,False,False,False)
+Gui.Form.ddlOutside.Create(DropDownList)
+Gui.Form.ddlOutside.Enabled(True)
+Gui.Form.ddlOutside.Visible(True)
+Gui.Form.ddlOutside.Zorder(0)
+Gui.Form.ddlOutside.Size(405,20)
+Gui.Form.ddlOutside.Position(718,121)
+Gui.Form.ddlOutside.FontName("Tahoma")
+Gui.Form.ddlOutside.FontSize(8.25)
+Gui.Form.ddlOutside.Parent("frameHeader")
+Gui.Form.lbl28.Create(Label,"Outside Report",True,85,13,0,718,105,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl28.BorderStyle(0)
+Gui.Form.lbl28.Parent("frameHeader")
+Gui.Form.lbl28.FontStyle(True,False,False,False,False)
+Gui.Form.lbl11.Create(Label,"Heat #",True,39,13,0,1013,9,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl11.BorderStyle(0)
+Gui.Form.lbl11.Parent("frameHeader")
+Gui.Form.lbl11.FontStyle(True,False,False,False,False)
+Gui.Form.lbl16.Create(Label,"Thread Detail",True,76,13,0,11,105,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl16.BorderStyle(0)
+Gui.Form.lbl16.Parent("frameHeader")
+Gui.Form.lbl16.FontStyle(True,False,False,False,False)
+Gui.Form.txtPO.Create(TextBox,"",True,100,20,0,8,29,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtPO.Parent("frameHeader")
+Gui.Form.txtPO.Locked(True)
+Gui.Form.lbl3.Create(Label,"Customer PO",True,73,13,0,18,11,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl3.BorderStyle(0)
+Gui.Form.lbl3.Parent("frameHeader")
+Gui.Form.lbl3.FontStyle(True,False,False,False,False)
+Gui.Form.txtPOLine.Create(TextBox,"",True,100,20,0,115,30,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtPOLine.Parent("frameHeader")
+Gui.Form.txtPOLine.Locked(True)
+Gui.Form.lbl4.Create(Label,"Line",True,23,13,0,127,12,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl4.BorderStyle(0)
+Gui.Form.lbl4.Parent("frameHeader")
+Gui.Form.lbl4.FontStyle(True,False,False,False,False)
+Gui.Form.txtPart.Create(TextBox,"",True,157,20,0,221,30,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtPart.Parent("frameHeader")
+Gui.Form.txtPart.Locked(True)
+Gui.Form.txtCountry.Create(TextBox,"Malaysia",True,83,20,0,902,30,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtCountry.Parent("frameHeader")
+Gui.Form.lbl10.Create(Label,"Country Of Origin",True,96,13,0,897,8,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl10.BorderStyle(0)
+Gui.Form.lbl10.Parent("frameHeader")
+Gui.Form.lbl10.FontStyle(True,False,False,False,False)
+Gui.Form.txtHeat.Create(TextBox,"",True,83,20,0,992,31,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtHeat.Parent("frameHeader")
+Gui.Form.txtHeat.Locked(True)
+Gui.Form.txtDesc.Create(TextBox,"",True,277,20,0,432,31,True,0,"Tahoma",8.25,,1)
+Gui.Form.txtDesc.Parent("frameHeader")
+Gui.Form.txtDesc.Locked(True)
+Gui.Form.lbl7.Create(Label,"Description",True,64,13,0,439,12,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl7.BorderStyle(0)
+Gui.Form.lbl7.Parent("frameHeader")
+Gui.Form.lbl7.FontStyle(True,False,False,False,False)
+Gui.Form.ddlDrawing.Create(DropDownList)
+Gui.Form.ddlDrawing.Enabled(True)
+Gui.Form.ddlDrawing.Visible(True)
+Gui.Form.ddlDrawing.Size(155,20)
+Gui.Form.ddlDrawing.Position(21,136)
+Gui.Form.ddlDrawing.FontName("Tahoma")
+Gui.Form.ddlDrawing.FontSize(8.25)
+Gui.Form.ddlDrawing.Event(SelectedIndexChanged,ddlDrawing_Click)
+Gui.Form.ddlDrawing.Zorder(0)
+Gui.Form.ddlDrawingRev.Create(DropDownList)
+Gui.Form.ddlDrawingRev.Enabled(True)
+Gui.Form.ddlDrawingRev.Visible(True)
+Gui.Form.ddlDrawingRev.Size(83,20)
+Gui.Form.ddlDrawingRev.Position(184,136)
+Gui.Form.ddlDrawingRev.FontName("Tahoma")
+Gui.Form.ddlDrawingRev.FontSize(8.25)
+Gui.Form.ddlDrawingRev.Zorder(0)
+Gui.Form.ddlHardResult.Create(DropDownList)
+Gui.Form.ddlHardResult.Enabled(True)
+Gui.Form.ddlHardResult.Visible(True)
+Gui.Form.ddlHardResult.Zorder(0)
+Gui.Form.ddlHardResult.Size(446,20)
+Gui.Form.ddlHardResult.Position(273,137)
+Gui.Form.ddlHardResult.FontName("Tahoma")
+Gui.Form.ddlHardResult.FontSize(8.25)
+Gui.Form.ddlHardSpec.Create(DropDownList)
+Gui.Form.ddlHardSpec.Enabled(True)
+Gui.Form.ddlHardSpec.Visible(True)
+Gui.Form.ddlHardSpec.Zorder(0)
+Gui.Form.ddlHardSpec.Size(405,20)
+Gui.Form.ddlHardSpec.Position(729,137)
+Gui.Form.ddlHardSpec.FontName("Tahoma")
+Gui.Form.ddlHardSpec.FontSize(8.25)
+Gui.Form.ddlThreadDtl.Create(DropDownList)
+Gui.Form.ddlThreadDtl.Enabled(True)
+Gui.Form.ddlThreadDtl.Visible(True)
+Gui.Form.ddlThreadDtl.Zorder(0)
+Gui.Form.ddlThreadDtl.Size(294,20)
+Gui.Form.ddlThreadDtl.Position(20,177)
+Gui.Form.ddlThreadDtl.FontName("Tahoma")
+Gui.Form.ddlThreadDtl.FontSize(8.25)
+Gui.Form.ddlThreadSTW.Create(DropDownList)
+Gui.Form.ddlThreadSTW.Enabled(True)
+Gui.Form.ddlThreadSTW.Visible(True)
+Gui.Form.ddlThreadSTW.Zorder(0)
+Gui.Form.ddlThreadSTW.Size(405,20)
+Gui.Form.ddlThreadSTW.Position(319,178)
+Gui.Form.ddlThreadSTW.FontName("Tahoma")
+Gui.Form.ddlThreadSTW.FontSize(8.25)
+Gui.Form.cmdSave.Create(Button)
+Gui.Form.cmdSave.Enabled(True)
+Gui.Form.cmdSave.Visible(True)
+Gui.Form.cmdSave.Zorder(0)
+Gui.Form.cmdSave.Size(75,58)
+Gui.Form.cmdSave.Position(1158,57)
+Gui.Form.cmdSave.Caption("SAVE")
+Gui.Form.cmdSave.FontName("Tahoma")
+Gui.Form.cmdSave.FontSize(8.25)
+Gui.Form.cmdSave.Event(Click,SaveButton_Click)
+Gui.Form.cmdApprove.Create(Button)
+Gui.Form.cmdApprove.Enabled(True)
+Gui.Form.cmdApprove.Visible(True)
+Gui.Form.cmdApprove.Zorder(0)
+Gui.Form.cmdApprove.Size(75,58)
+Gui.Form.cmdApprove.Position(1244,57)
+Gui.Form.cmdApprove.Caption("APPROVE")
+Gui.Form.cmdApprove.FontName("Tahoma")
+Gui.Form.cmdApprove.FontSize(8.25)
+Gui.Form.cmdApprove.Event(Click,CmdApprove_Click)
+Gui.Form.cmdOpen.Create(Button)
+Gui.Form.cmdOpen.Enabled(True)
+Gui.Form.cmdOpen.Visible(True)
+Gui.Form.cmdOpen.Zorder(0)
+Gui.Form.cmdOpen.Size(75,58)
+Gui.Form.cmdOpen.Position(1160,134)
+Gui.Form.cmdOpen.Caption("OPEN")
+Gui.Form.cmdOpen.FontName("Tahoma")
+Gui.Form.cmdOpen.FontSize(8.25)
+Gui.Form.cmdOpen.Event(Click,cmdOpen_Click)
+Gui.Form.cmdDelete.Create(Button)
+Gui.Form.cmdDelete.Enabled(True)
+Gui.Form.cmdDelete.Visible(True)
+Gui.Form.cmdDelete.Zorder(0)
+Gui.Form.cmdDelete.Size(75,58)
+Gui.Form.cmdDelete.Position(1246,132)
+Gui.Form.cmdDelete.Caption("DELETE")
+Gui.Form.cmdDelete.FontName("Tahoma")
+Gui.Form.cmdDelete.FontSize(8.25)
+Gui.Form.cmdDelete.Event(Click,CmdDelete_Click)
+Gui.Form.tabDetails.Create(Tab)
+Gui.Form.tabDetails.Enabled(True)
+Gui.Form.tabDetails.Visible(True)
+Gui.Form.tabDetails.Zorder(0)
+Gui.Form.tabDetails.Size(1321,502)
+Gui.Form.tabDetails.Position(20,220)
+Gui.Form.tabDetails.FontName("Tahoma")
+Gui.Form.tabDetails.FontSize(8.25)
+Gui.Form.tabDetails.Tabs(2)
+Gui.Form.tabDetails.SetTab(0)
+Gui.Form.tabDetails.Caption("Finish Good")
+Gui.Form.tabDetails.SetTab(1)
+Gui.Form.tabDetails.Caption("Components")
+Gui.Form.lbl23.Create(Label,"Coating",True,43,13,0,9,143,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl23.BorderStyle(0)
+Gui.Form.lbl23.Parent("tabDetails",1)
+Gui.Form.lbl23.FontStyle(True,False,False,False,False)
+Gui.Form.GsGCMatCmp.Create(GsGridControl)
+Gui.Form.GsGCMatCmp.Enabled(True)
+Gui.Form.GsGCMatCmp.Visible(True)
+Gui.Form.GsGCMatCmp.Zorder(0)
+Gui.Form.GsGCMatCmp.Size(1300,108)
+Gui.Form.GsGCMatCmp.Position(4,24)
+Gui.Form.GsGCMatCmp.Parent("tabDetails",1)
+Gui.Form.GsGCMatCmp.Event(RowCellClick,GSGCMaterial_Click)
+Gui.Form.lbl24.Create(Label,"NDE",True,21,13,0,709,142,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl24.BorderStyle(0)
+Gui.Form.lbl24.Parent("tabDetails",1)
+Gui.Form.lbl24.FontStyle(True,False,False,False,False)
+Gui.Form.lbl27.Create(Label,"MT16",True,31,13,0,709,283,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl27.BorderStyle(0)
+Gui.Form.lbl27.Parent("tabDetails",1)
+Gui.Form.lbl27.FontStyle(True,False,False,False,False)
+Gui.Form.GsGCMT16Comp.Create(GsGridControl)
+Gui.Form.GsGCMT16Comp.Enabled(True)
+Gui.Form.GsGCMT16Comp.Visible(True)
+Gui.Form.GsGCMT16Comp.Zorder(0)
+Gui.Form.GsGCMT16Comp.Size(596,108)
+Gui.Form.GsGCMT16Comp.Position(705,308)
+Gui.Form.GsGCMT16Comp.Parent("tabDetails",1)
+Gui.Form.GsGCMT16Comp.Event(RowCellClick,GSGCMT16_Click)
+Gui.Form.lbl25.Create(Label,"QCP",True,22,13,0,11,286,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl25.BorderStyle(0)
+Gui.Form.lbl25.Parent("tabDetails",1)
+Gui.Form.lbl25.FontStyle(True,False,False,False,False)
+Gui.Form.lbl18.Create(Label,"Material",True,47,13,0,12,6,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl18.BorderStyle(0)
+Gui.Form.lbl18.FontStyle(True,False,False,False,False)
+Gui.Form.lbl18.Parent("tabDetails",1)
+Gui.Form.GsGCQCPCmp.Create(GsGridControl)
+Gui.Form.GsGCQCPCmp.Enabled(True)
+Gui.Form.GsGCQCPCmp.Visible(True)
+Gui.Form.GsGCQCPCmp.Zorder(0)
+Gui.Form.GsGCQCPCmp.Size(678,108)
+Gui.Form.GsGCQCPCmp.Position(3,309)
+Gui.Form.GsGCQCPCmp.Parent("tabDetails",1)
+Gui.Form.GsGCQCPCmp.Event(RowCellClick,GSGCQCP_Click)
+Gui.Form.GsGCNDECmp.Create(GsGridControl)
+Gui.Form.GsGCNDECmp.Enabled(True)
+Gui.Form.GsGCNDECmp.Visible(True)
+Gui.Form.GsGCNDECmp.Zorder(0)
+Gui.Form.GsGCNDECmp.Size(597,108)
+Gui.Form.GsGCNDECmp.Position(704,167)
+Gui.Form.GsGCNDECmp.Parent("tabDetails",1)
+Gui.Form.GsGCNDECmp.Event(RowCellClick,GSGCNDE_Click)
+Gui.Form.GsGCCoatCmp.Create(GsGridControl)
+Gui.Form.GsGCCoatCmp.Enabled(True)
+Gui.Form.GsGCCoatCmp.Visible(True)
+Gui.Form.GsGCCoatCmp.Zorder(0)
+Gui.Form.GsGCCoatCmp.Size(675,108)
+Gui.Form.GsGCCoatCmp.Position(5,167)
+Gui.Form.GsGCCoatCmp.Parent("tabDetails",1)
+Gui.Form.GsGCCoatCmp.Event(RowCellClick,GSGCCoating_Click)
+Gui.Form.GsGCMaterial.Create(GsGridControl)
+Gui.Form.GsGCMaterial.Enabled(True)
+Gui.Form.GsGCMaterial.Visible(True)
+Gui.Form.GsGCMaterial.Zorder(0)
+Gui.Form.GsGCMaterial.Size(1297,108)
+Gui.Form.GsGCMaterial.Position(4,24)
+Gui.Form.GsGCMaterial.Parent("tabDetails",0)
+Gui.Form.GsGCMaterial.Event(RowCellClick,GSGCMaterial_Click)
+Gui.Form.GsGCQCP.Create(GsGridControl)
+Gui.Form.GsGCQCP.Enabled(True)
+Gui.Form.GsGCQCP.Visible(True)
+Gui.Form.GsGCQCP.Zorder(0)
+Gui.Form.GsGCQCP.Size(650,108)
+Gui.Form.GsGCQCP.Position(9,300)
+Gui.Form.GsGCQCP.Parent("tabDetails",0)
+Gui.Form.GsGCQCP.Event(RowCellClick,GSGCQCP_Click)
+Gui.Form.lbl22.Create(Label,"QCP",True,22,13,0,13,279,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl22.BorderStyle(0)
+Gui.Form.lbl22.Parent("tabDetails",0)
+Gui.Form.lbl22.FontStyle(True,False,False,False,False)
+Gui.Form.GsGCNDE.Create(GsGridControl)
+Gui.Form.GsGCNDE.Enabled(True)
+Gui.Form.GsGCNDE.Visible(True)
+Gui.Form.GsGCNDE.Zorder(0)
+Gui.Form.GsGCNDE.Size(606,108)
+Gui.Form.GsGCNDE.Position(691,163)
+Gui.Form.GsGCNDE.Parent("tabDetails",0)
+Gui.Form.GsGCNDE.Event(RowCellClick,GSGCNDE_Click)
+Gui.Form.GsGCCoating.Create(GsGridControl)
+Gui.Form.GsGCCoating.Enabled(True)
+Gui.Form.GsGCCoating.Visible(True)
+Gui.Form.GsGCCoating.Zorder(0)
+Gui.Form.GsGCCoating.Size(656,108)
+Gui.Form.GsGCCoating.Position(6,164)
+Gui.Form.GsGCCoating.Parent("tabDetails",0)
+Gui.Form.GsGCCoating.Event(RowCellClick,GSGCCoating_Click)
+Gui.Form.lbl21.Create(Label,"NDE",True,21,13,0,695,140,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl21.BorderStyle(0)
+Gui.Form.lbl21.Parent("tabDetails",0)
+Gui.Form.lbl21.FontStyle(True,False,False,False,False)
+Gui.Form.lbl20.Create(Label,"Coating",True,43,13,0,8,141,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl20.BorderStyle(0)
+Gui.Form.lbl20.Parent("tabDetails",0)
+Gui.Form.lbl20.FontStyle(True,False,False,False,False)
+Gui.Form.lbl19.Create(Label,"Material",True,47,13,0,4,0,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl19.BorderStyle(0)
+Gui.Form.lbl19.FontStyle(True,False,False,False,False)
+Gui.Form.lbl19.Parent("tabDetails",0)
+Gui.Form.GsGCMT16.Create(GsGridControl)
+Gui.Form.GsGCMT16.Enabled(True)
+Gui.Form.GsGCMT16.Visible(True)
+Gui.Form.GsGCMT16.Zorder(0)
+Gui.Form.GsGCMT16.Size(604,108)
+Gui.Form.GsGCMT16.Position(693,301)
+Gui.Form.GsGCMT16.Parent("tabDetails",0)
+Gui.Form.GsGCMT16.Event(RowCellClick,GSGCMT16_Click)
+Gui.Form.lbl26.Create(Label,"MT16",True,31,13,0,698,282,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl26.BorderStyle(0)
+Gui.Form.lbl26.Parent("tabDetails",0)
+Gui.Form.lbl26.FontStyle(True,False,False,False,False)
+Gui.Form.lbl29.Create(Label,"Created By:",True,58,13,0,345,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl29.BorderStyle(0)
+Gui.Form.lblCreated.Create(Label,"-",True,4,13,0,408,29,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblCreated.BorderStyle(0)
+Gui.Form.lbl30.Create(Label,"Approved By:",True,66,13,0,642,31,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lbl30.BorderStyle(0)
+Gui.Form.lblApproved.Create(Label,"-",True,4,13,0,713,30,True,0,"Tahoma",8.25,,0,0)
+Gui.Form.lblApproved.BorderStyle(0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+V.Global.dWODate.Declare
+V.Global.sSO.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+V.Local.sSQL.Declare
+
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+F.ODBC.Connection!conx.OpenCompanyConnection(600)
+Gui.form.tabDetails.SetTab(0)
+
+'Gui.form.frameHeader.Anchor(9)
+'Gui.form.tabDetails.Anchor(15)
+
+F.Intrinsic.String.Build("select * from GAB_6192_Approver where GS_User = '{0}'",V.Caller.User.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+	Gui.Form.cmdApprove.Enabled(False)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+Gui.Form..Show
+Program.Sub.Main.End
+
+Program.Sub.cmdBrowse_Click.Start
+V.Local.iCount.Declare
+V.Local.sRet.Declare
+V.Local.sTitles.Declare
+V.Local.iWidths.Declare
+V.Local.sPart.Declare
+V.Local.sRev.Declare
+V.Local.iCheck.Declare
+V.Local.sSQL.Declare
+V.Local.i1.Declare
+V.Local.sLot.Declare
+V.Local.sPartRev.Declare
+
+F.Intrinsic.String.Split("Job*!*Suffix*!*WO Date*!*SO*!*Customer PO*!*Line*!*Part*!*Description*!*Qty*!*Lot","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("400*!*200*!*400*!*600*!*550*!*200*!*800*!*1000*!*400*!*400","*!*",V.Local.iWidths)
+
+'F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+'F.Intrinsic.UI.Browser("Select Work Order by Customer PO","conx","SELECT A.Job, A.Suffix, D.Date_Opened, A.Order_No, B.Customer_PO, Left(A.Order_Line,3) as SO_Line, C.Part, A.Description, A.Qty_Ord FROM V_Order_To_WO A Left Join V_Order_Header B On A.Order_No = B.Order_No Left Join V_Order_Lines C On A.Order_No = C.Order_No and A.Order_Line = C.Record_No Left Join V_Job_Header D On A.Job = D.Job and A.Suffix = D.Suffix;",V.Local.sTitles,V.Local.iWidths,16000,10000,V.Local.sRet)
+F.Intrinsic.UI.Browser("Select Work Order by Customer PO","conx","SELECT A.Job, A.Suffix, B.Date_Opened, A.Order_No, B.Customer_PO, Left(A.Order_Line,3) as SO_Line, B.Part, A.Description, A.Qty_Ord, C.Lot FROM V_Order_To_WO A Left Join V_Job_Header B On A.Job = B.Job and A.Suffix = B.Suffix Left Join (Select * From V_Item_History Where Code_Transaction = 'J52') C On A.Part = A.Part and A.Job = C.Job and A.Suffix = C.Suffix;",V.Local.sTitles,V.Local.iWidths,12000,10000,V.Local.sRet)
+		
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+F.Intrinsic.UI.InvokeWaitDialog("Processing Records...")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	
+	Gui.Form.txtWO.Text(V.Local.sRet(0))
+	Gui.Form.txtSuffix.Text(V.Local.sRet(1))
+	V.Global.dWODate.Set(V.Local.sRet(2))
+	V.Global.sSO.Set(V.Local.sRet(3))
+	Gui.Form.txtPO.Text(V.Local.sRet(4))
+	Gui.Form.txtPOLine.Text(V.Local.sRet(5))
+	Gui.Form.ddlDrawing.ClearSelected
+	Gui.Form.ddlDrawing.ClearItems
+	Gui.Form.ddlDrawingRev.ClearItems
+	Gui.Form.ddlDrawingRev.ClearSelected
+	Gui.Form.ddlHardResult.ClearItems
+	Gui.Form.ddlHardResult.ClearSelected
+	Gui.Form.ddlHardSpec.ClearItems
+	Gui.Form.ddlHardSpec.ClearSelected
+	Gui.Form.ddlThreadDtl.ClearItems
+	Gui.Form.ddlThreadDtl.ClearSelected
+	Gui.Form.ddlThreadSTW.ClearItems
+	Gui.Form.ddlThreadSTW.ClearSelected
+	Gui.Form.ddlOutside.ClearItems
+	Gui.Form.ddlOutside.ClearSelected
+	
+	V.Local.sPart.Set(V.Local.sRet(6))
+	F.Intrinsic.String.Len(V.Local.sPart.Trim,V.Local.iCount)
+	'F.Intrinsic.Debug.ShowCallerInfo
+	F.Intrinsic.Control.If(V.Local.iCount,=,18)
+		F.Intrinsic.String.Right(V.Local.sPart.Trim,1,V.Local.sRev)
+		F.Intrinsic.String.Left(V.Local.sPart.Trim,17,V.Local.sPart)
+	F.Intrinsic.Control.ElseIf(V.Local.iCount,=,19)
+		F.Intrinsic.String.Right(V.Local.sPart.Trim,2,V.Local.sRev)
+		F.Intrinsic.String.Left(V.Local.sPart.Trim,17,V.Local.sPart)
+	F.Intrinsic.Control.ElseIf(V.Local.iCount,=,20)
+		F.Intrinsic.String.Right(V.Local.sPart.Trim,3,V.Local.sRev)	
+		F.Intrinsic.String.Left(V.Local.sPart.Trim,17,V.Local.sPart)
+	F.Intrinsic.Control.EndIf
+	Gui.Form.txtPart.Text(V.Local.sPart.Trim)
+	Gui.Form.txtPartRev.Text(V.Local.sRev.Trim)
+	
+	F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+	F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Local.sRev.Trim,V.Local.sPartRev)
+	
+	Gui.Form.txtDesc.Text(V.Local.sRet(7))
+	Gui.Form.txtPOQty.Text(V.Local.sRet(8))
+	
+	V.Local.iCheck.Set(0)
+	
+	F.Intrinsic.String.Build("select * from GAB_6192_Drawing where Part = '{0}'",V.Local.sPartRev.Trim,V.Local.sSQL)
+'	F.Intrinsic.Debug.ShowCallerInfo
+	F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlDrawing.AddItem(V.DataTable.dtTemp(V.Local.i1).Drawing!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.String.Build("select * from GAB_6192_Hardness where Part = '{0}'",V.Local.sPartRev.Trim,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlHardResult.AddItem(V.DataTable.dtTemp(V.Local.i1).Hardness_Result!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlHardSpec.AddItem(V.DataTable.dtTemp(V.Local.i1).Hardness_Spec!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)	
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.String.Build("select * from GAB_6192_Thread where Part = '{0}'",V.Local.sPartRev.Trim,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlThreadDtl.AddItem(V.DataTable.dtTemp(V.Local.i1).Thread_Detail!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlThreadSTW.AddItem(V.DataTable.dtTemp(V.Local.i1).Thread_STW!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)	
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.String.Build("select * from GAB_6192_Outside where Part = '{0}'",V.Local.sPartRev.Trim,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlOutside.AddItem(V.DataTable.dtTemp(V.Local.i1).Outside!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.Control.If(V.Local.sRet(1),<>,"")
+		F.Intrinsic.String.Build("{0}-{1}",V.Local.sRet(0),V.Local.sRet(1),V.Local.sLot)
+	F.Intrinsic.Control.ElseIf(V.Local.sRet(1),=,"")
+		V.Local.sLot.Set(V.Local.sRet(0))
+	F.Intrinsic.Control.EndIf
+	Gui.Form.txtLot.Text(V.Local.sRet(9))
+	
+	F.Intrinsic.Control.CallSub(loadRecords,"iCheck",0)
+F.Intrinsic.UI.CloseWaitDialog	
+F.Intrinsic.Control.EndIf		
+Program.Sub.cmdBrowse_Click.End
+
+Program.Sub.ddlDrawing_Click.Start
+V.Local.sSQL.Declare
+V.Local.sPart.Declare
+V.Local.i1.Declare
+V.Local.sDrawing.Declare
+
+V.Local.sDrawing.Set(V.Screen.Form!ddlDrawing.Text)
+V.Local.sPart.Set(V.Screen.Form!txtPart.Text)
+F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+
+F.Intrinsic.String.Build("select * from GAB_6192_Drawing where Part = '{0}' and Drawing = '{1}'",V.Local.sPart.Trim,V.Local.sDrawing.Trim,V.Local.sSQL)
+F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+	gui.Form.ddlDrawingRev.AddItem(V.DataTable.dtTemp(V.Local.i1).Rev!FieldValTrim)
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Data.DataTable.Close("dtTemp")
+Program.Sub.ddlDrawing_Click.End
+
+Program.Sub.cmdOpen_Click.Start
+V.Local.iCount.Declare
+V.Local.sRet.Declare
+V.Local.sTitles.Declare
+V.Local.iWidths.Declare
+V.Local.sPart.Declare
+V.Local.sRev.Declare
+V.Local.iCheck.Declare
+V.Local.sSQL.Declare
+V.Local.i1.Declare
+V.Local.sCreated.Declare
+
+F.Intrinsic.String.Split("Job*!*Suffix*!*WO Date*!*SO*!*Customer PO*!*Line*!*Part*!*Description*!*Lot","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("400*!*200*!*400*!*600*!*600*!*500*!*800*!*1000*!*400","*!*",V.Local.iWidths)
+
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+F.Intrinsic.UI.Browser("Select Work Order by Customer PO","conx","SELECT WO, Suffix, WO_Date, SO, PO, PO_Line, Part, Description, Lot From GAB_6192_COC ;",V.Local.sTitles,V.Local.iWidths,20000,10000,V.Local.sRet)
+
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	V.Local.sPart.Set(V.Local.sRet(6))
+	V.Global.dWODate.Set(V.Local.sRet(2))
+	F.Intrinsic.String.Build("select * from GAB_6192_COC where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Local.sRet(0),V.Local.sRet(1),V.Global.dWODate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.OpenLocalRecordsetRO("rst",V.Local.sSQL)
+	F.Intrinsic.UI.InvokeWaitDialog("Processing Records...")
+	
+	F.Intrinsic.String.Build("select * from GAB_6192_Drawing where Part = '{0}'",V.Local.sPart.Trim,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+	Gui.Form.ddlDrawing.ClearItems
+	Gui.Form.ddlDrawing.ClearSelected
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlDrawing.AddItem(V.DataTable.dtTemp(V.Local.i1).Drawing!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	
+	Gui.Form.ddlDrawingRev.ClearItems
+	Gui.Form.ddlDrawingRev.ClearSelected
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlDrawingRev.AddItem(V.DataTable.dtTemp(V.Local.i1).Rev!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)	
+	F.Data.DataTable.Close("dtTemp")
+	
+	F.Intrinsic.String.Build("select * from GAB_6192_Hardness where Part = '{0}'",V.Local.sPart.Trim,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+	Gui.Form.ddlHardResult.ClearItems
+	Gui.Form.ddlHardResult.ClearSelected
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlHardResult.AddItem(V.DataTable.dtTemp(V.Local.i1).Hardness_Result!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+
+	Gui.Form.ddlHardSpec.ClearItems
+	Gui.Form.ddlHardSpec.ClearSelected
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlHardSpec.AddItem(V.DataTable.dtTemp(V.Local.i1).Hardness_Spec!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)	
+	F.Data.DataTable.Close("dtTemp")
+
+	Gui.Form.ddlThreadDtl.ClearItems
+	Gui.Form.ddlThreadDtl.ClearSelected
+	F.Intrinsic.String.Build("select * from GAB_6192_Thread where Part = '{0}'",V.Local.sPart.Trim,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlThreadDtl.AddItem(V.DataTable.dtTemp(V.Local.i1).Thread_Detail!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+
+	Gui.Form.ddlThreadSTW.ClearItems
+	Gui.Form.ddlThreadSTW.ClearSelected
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlThreadSTW.AddItem(V.DataTable.dtTemp(V.Local.i1).Thread_STW!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)	
+	F.Data.DataTable.Close("dtTemp")
+
+	Gui.Form.ddlOutside.ClearItems
+	Gui.Form.ddlOutside.ClearSelected
+	F.Intrinsic.String.Build("select * from GAB_6192_Outside where Part = '{0}'",V.Local.sPart.Trim,V.Local.sSQL)
+	F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+	F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+		gui.Form.ddlOutside.AddItem(V.DataTable.dtTemp(V.Local.i1).Outside!FieldValTrim)
+	F.Intrinsic.Control.Next(V.Local.i1)
+	F.Data.DataTable.Close("dtTemp")
+
+	Gui.Form.txtWO.Text(V.Local.sRet(0))
+	Gui.Form.txtSuffix.Text(V.Local.sRet(1))
+	V.Global.sSO.Set(V.Local.sRet(3))
+	Gui.Form.txtPO.Text(V.Local.sRet(4))
+	Gui.Form.txtPOLine.Text(V.Local.sRet(5))
+	Gui.Form.txtLot.Text(V.ODBC.conx!rst.FieldValTrim!Lot)
+	Gui.Form.ddlDrawing.Text(V.ODBC.conx!rst.FieldValTrim!Drawing)
+	Gui.Form.ddlDrawingRev.Text(V.ODBC.conx!rst.FieldValTrim!Drawing_Rev)
+	Gui.Form.ddlHardResult.Text(V.ODBC.conx!rst.FieldValTrim!Hard_Result)
+	Gui.Form.ddlHardSpec.Text(V.ODBC.conx!rst.FieldValTrim!Hard_Spec)
+	Gui.Form.ddlThreadDtl.Text(V.ODBC.conx!rst.FieldValTrim!Thread_Dtl)
+	Gui.Form.ddlThreadSTW.Text(V.ODBC.conx!rst.FieldValTrim!Thread_STW)
+	Gui.Form.ddlOutside.Text(V.ODBC.conx!rst.FieldValTrim!Outside_No)
+	
+	F.Intrinsic.String.Len(V.Local.sPart.Trim,V.Local.iCount)
+	F.Intrinsic.Control.If(V.Local.iCount,=,18)
+		F.Intrinsic.String.Left(V.Local.sPart.Trim,17,V.Local.sPart)
+		F.Intrinsic.String.Right(V.Local.sPart.Trim,1,V.Local.sRev)
+	F.Intrinsic.Control.ElseIf(V.Local.iCount,=,19)
+		F.Intrinsic.String.Left(V.Local.sPart.Trim,17,V.Local.sPart)
+		F.Intrinsic.String.Right(V.Local.sPart.Trim,2,V.Local.sRev)
+	F.Intrinsic.Control.ElseIf(V.Local.iCount,=,20)
+		F.Intrinsic.String.Left(V.Local.sPart.Trim,17,V.Local.sPart)
+		F.Intrinsic.String.Right(V.Local.sPart.Trim,3,V.Local.sRev)	
+	F.Intrinsic.Control.EndIf
+	Gui.Form.txtPart.Text(V.Local.sPart.Trim)
+	Gui.Form.txtPartRev.Text(V.Local.sRev.Trim)
+	
+	Gui.Form.txtDesc.Text(V.ODBC.conx!rst.FieldValTrim!Description)
+	Gui.Form.txtPOQty.Text(V.ODBC.conx!rst.FieldVal!Qty)
+	
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValTrim!Created_By,=,"")
+		Gui.Form.lblCreated.Text("-")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}, {1}",V.ODBC.conx!rst.FieldVal!Created_By,V.ODBC.conx!rst.FieldVal!Created_Date,V.Local.sCreated)
+		Gui.Form.lblCreated.Caption(V.Local.sCreated)
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.ODBC.conx!rst.FieldValTrim!Approved_By,=,"")
+		Gui.Form.lblApproved.Text("-")
+		Gui.Form.cmdApprove.Caption("APPROVE")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("{0}, {1}",V.ODBC.conx!rst.FieldVal!Approved_By,V.ODBC.conx!rst.FieldVal!Approved_Date,V.Local.sCreated)
+		Gui.Form.lblApproved.Caption(V.Local.sCreated)
+		Gui.Form.cmdApprove.Caption("UNAPPROVE")
+	F.Intrinsic.Control.EndIf
+	
+	F.ODBC.conx!rst.Close
+	F.Intrinsic.Control.CallSub(loadRecords,"iCheck",1)
+F.Intrinsic.UI.CloseWaitDialog	
+F.Intrinsic.Control.EndIf
+
+Program.Sub.cmdOpen_Click.End
+
+Program.Sub.CmdDelete_Click.Start
+V.Local.sSQL.Declare
+V.Local.sWO.Declare
+V.Local.i1.Declare
+V.Local.sSuffix.Declare
+V.Local.iRet.Declare
+
+V.Local.sWO.Set(V.Screen.Form!txtWO.Text)
+V.Local.sSuffix.Set(V.Screen.Form!txtSuffix.Text)
+
+F.Intrinsic.UI.Msgbox("This CoC will be deleted, are you sure?","CoC",4,V.Local.iRet)
+F.Intrinsic.Control.If(V.Local.iRet,=,6)
+	F.Intrinsic.UI.InvokeWaitDialog("Deleting Records...")
+	Gui.Form..Enabled(False)	
+	F.Intrinsic.String.Build("delete from GAB_6192_CoC where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Local.sWO,V.Local.sSuffix,V.Global.dWODate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.String.Build("delete from GAB_6192_CoC_Coat where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Local.sWO,V.Local.sSuffix,V.Global.dWODate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.String.Build("delete from GAB_6192_CoC_Mat where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Local.sWO,V.Local.sSuffix,V.Global.dWODate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.String.Build("delete from GAB_6192_CoC_NDE where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Local.sWO,V.Local.sSuffix,V.Global.dWODate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.String.Build("delete from GAB_6192_CoC_QCP where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Local.sWO,V.Local.sSuffix,V.Global.dWODate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	F.Intrinsic.String.Build("delete from GAB_6192_CoC_MT16 where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Local.sWO,V.Local.sSuffix,V.Global.dWODate.PervasiveDate,V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	
+	Gui.Form.txtWO.Text("")
+	Gui.Form.txtSuffix.Text("")
+	V.Global.dWODate.Set("1900-01-01")
+	V.Global.sSO.Set("")
+	Gui.Form.txtPO.Text("")
+	Gui.Form.txtPOLine.Text("")
+	Gui.Form.txtPart.Text("")
+	Gui.Form.txtPartRev.Text("")	
+	Gui.Form.txtDesc.Text("")
+	Gui.Form.txtPOQty.Text("")	
+	Gui.Form.ddlDrawing.ClearSelected
+	Gui.Form.ddlDrawing.ClearItems
+	Gui.Form.ddlDrawingRev.ClearItems
+	Gui.Form.ddlDrawingRev.ClearSelected
+	Gui.Form.ddlHardResult.ClearItems
+	Gui.Form.ddlHardResult.ClearSelected
+	Gui.Form.ddlHardSpec.ClearItems
+	Gui.Form.ddlHardSpec.ClearSelected
+	Gui.Form.ddlThreadDtl.ClearItems
+	Gui.Form.ddlThreadDtl.ClearSelected
+	Gui.Form.ddlThreadSTW.ClearItems
+	Gui.Form.ddlThreadSTW.ClearSelected
+	
+	F.Intrinsic.Control.CallSub(loadrecords)
+	F.Intrinsic.UI.CloseWaitDialog
+	Gui.Form..Enabled(True)		
+F.Intrinsic.Control.EndIf
+Program.Sub.CmdDelete_Click.End
+
+Program.Sub.CmdApprove_Click.Start
+V.Local.sSQL.Declare
+V.Local.sCreated.Declare
+V.Local.sPart.Declare
+
+F.Intrinsic.String.Build(V.Screen.Form!txtPart.Text,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+
+F.Intrinsic.Control.If(V.Screen.Form!cmdApprove.Text,=,"APPROVE")
+	F.Intrinsic.String.Build("Update GAB_6192_COC Set Approved_By = '{4}', Approved_Date = '{5}' where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.Local.sPart, V.Caller.User, V.Ambient.Date.PervasiveDate, V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	F.Intrinsic.UI.Msgbox("CoC is approved!")
+	Gui.Form.cmdApprove.Caption("UNAPPROVE")
+	F.Intrinsic.String.Build("{0}, {1}",V.Caller.User, V.Ambient.Date,V.Local.sCreated)
+	Gui.Form.lblApproved.Caption(V.Local.sCreated)
+	
+F.Intrinsic.Control.ElseIf(V.Screen.Form!cmdApprove.Text,=,"UNAPPROVE")
+	F.Intrinsic.String.Build("Update GAB_6192_COC Set Approved_By = '', Approved_Date = '1900-01-01' where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}'",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.Local.sPart, V.Caller.User, V.Ambient.Date.PervasiveDate, V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+	F.Intrinsic.UI.Msgbox("CoC is unapproved!")
+	Gui.Form.cmdApprove.Caption("APPROVE")
+	Gui.Form.lblApproved.Caption("-")
+
+F.Intrinsic.Control.EndIf
+
+Program.Sub.CmdApprove_Click.End
+
+Program.Sub.LoadRecords.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sSQL.Declare
+	V.Local.dBegDate.Declare
+	V.Local.dEndDate.Declare
+	V.Local.sPart.Declare
+	V.Local.sAccrual.Declare
+	V.Local.sPrevAccrual.Declare
+	V.Local.sOpenInv.Declare
+	V.Local.sPrevOpenInv.Declare
+	V.Local.sInvoice.Declare
+	V.Local.sActiveFilterString.Declare
+	V.Local.fBreak.Declare
+	V.Local.iMonth.Declare
+	V.Local.iYear.Declare
+	V.Local.iPrevYear.Declare
+	V.Local.iPrevMonth.Declare
+	V.Local.iPrevSYear.Declare
+	V.Local.i1.Declare
+	V.Local.iCount.Declare
+
+'	Gui.frmWithoutRouter.lblStatus.Visible(True)
+'	Gui.frmWithoutRouter.pbStatus.Visible(True)
+'	Gui.frmWithoutRouter.pbStatus.Min(0)
+'	Gui.frmWithoutRouter.pbStatus.Max(100)
+	
+	Gui.form..Visible(False)
+
+'	F.Intrinsic.Control.If(V.Global.bLoadDate)
+'		F.Intrinsic.Control.CallSub(Serialize)
+'	F.Intrinsic.Control.EndIf
+'	V.Global.bLoadDate.Set(True)
+
+	F.Intrinsic.Control.If(V.DataTable.dtMatFG.Exists)
+		F.Data.DataTable.Close("dtMatFG")	
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.DataTable.dtCoatFG.Exists)
+		F.Data.DataTable.Close("dtCoatFG")	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtNDEFG.Exists)
+		F.Data.DataTable.Close("dtNDEFG")	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtQCPFG.Exists)
+		F.Data.DataTable.Close("dtQCPFG")	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtMT16.Exists)
+		F.Data.DataTable.Close("dtMT16")	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtMatComp.Exists)
+		F.Data.DataTable.Close("dtMatComp")	
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.DataTable.dtCoatComp.Exists)
+		F.Data.DataTable.Close("dtCoatComp")	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtNDEComp.Exists)
+		F.Data.DataTable.Close("dtNDEComp")	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtQCPComp.Exists)
+		F.Data.DataTable.Close("dtQCPComp")	
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.dtMT16Comp.Exists)
+		F.Data.DataTable.Close("dtMT16Comp")	
+	F.Intrinsic.Control.EndIf	
+
+'	F.Intrinsic.Control.If(V.Args.iCheck,=,0)
+		
+		F.Intrinsic.String.Build("select A.Seq, B.ID, B.MDS, B.Rev, B.CMS, B.CMS_Rev, B.Supplier, B.PO, B.Heat, B.MDS_Remark, B.CMS_Remark from GAB_6192_CoC_MAT A Left Join GAB_6192_Material B On A.Part = B.Part and A.MDS_ID = B.ID WHERE WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtMatFg","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtMatFG","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtMatFg.RowCount,1,V.Local.iCount)
+		F.Data.DataTable.AddRow("dtMatFG","Seq",V.Local.iCount,"ID",0)
+		
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtMatFG","GSGC","GSGCMaterial","GV","gvMatFG")
+		
+		F.Intrinsic.String.Build("select A.Seq, B.ID, B.CSP, B.Rev, B.Description, B.Supplier, B.PO, B.Certificate, B.CSP_Remark from GAB_6192_CoC_Coat A Left Join GAB_6192_Coating B On A.Part = B.Part and A.Coating_ID = B.ID WHERE WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtCoatFg","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtCoatFG","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtCoatFg.RowCount,1,V.Local.iCount)		
+		F.Data.DataTable.AddRow("dtCoatFG","Seq",V.Local.iCount,"ID",0,"CSP","","Rev","","CSP_Remark","","Description","","Supplier","","PO","","Certificate",0,"Delete","Delete")
+		
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtCoatFG","GSGC","GSGCCoating","GV","gvCoatFG")
+				
+		F.Intrinsic.String.Build("select A.Seq, B.ID, B.NDE, B.Rev, B.Supplier, B.PO, B.Insp_Lvl, B.Expiry_Date, B.NDE_Remark from GAB_6192_CoC_NDE A Left Join GAB_6192_NDE B On A.Part = B.Part and A.NDE_ID = B.ID WHERE WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtNDEFg","conx",V.Local.sSQL,True)		
+		F.Data.DataTable.AddColumn("dtNDEFG","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtNDEFg.RowCount,1,V.Local.iCount)
+		F.Data.DataTable.AddRow("dtNDEFG","Seq",V.Local.iCount,"ID",0,"NDE","","Rev","","NDE_Remark","","Supplier","","PO","","Insp_Lvl","","Expiry_Date","1900-01-01","Delete","Delete")		
+
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtNDEFG","GSGC","GSGCNDE","GV","gvNDEFG")
+	
+		F.Intrinsic.String.Build("select A.Seq, B.ID, B.QCP, B.QCP_Rev, B.Insp, B.Insp_Rev, B.MN15, B.MN15_Rev, B.TPI_Date, B.Ron_ID from GAB_6192_CoC_QCP A Left Join GAB_6192_QCP B On A.Part = B.Part and A.QCP_ID = B.ID WHERE WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtQCPFg","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtQCPFG","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtQCPFg.RowCount,1,V.Local.iCount)		
+		F.Data.DataTable.AddRow("dtQCPFG","Seq",V.Local.iCount,"ID",0,"QCP","","QCP_Rev","","Insp","","Insp_Rev","","MN15","","MN15_Rev","","TPI_Date","1900-01-01","RON_ID","","Delete","Delete")
+
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtQCPFG","GSGC","GSGCQCP","GV","gvQCPFG")
+				
+		F.Intrinsic.String.Build("select A.Seq, B.ID, B.MT16, B.Rev, B.Supplier, B.PO, B.Certificate from GAB_6192_CoC_MT16 A Left Join GAB_6192_MT16 B On A.Part = B.Part and A.MT16_ID = B.ID WHERE WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtMT16","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtMT16","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtMT16.RowCount,1,V.Local.iCount)		
+		F.Data.DataTable.AddRow("dtMT16","Seq",1,"ID",0)	
+		
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtMT16","GSGC","GSGCMT16","GV","gvMT16")		
+	
+		F.Intrinsic.String.Build("select A.Seq, A.WO, A.Suffix, A.WO_Date, B.Part, B.ID, B.MDS, B.Rev, B.CMS, B.CMS_Rev, B.Supplier, B.PO, B.Heat, B.MDS_Remark, B.CMS_Remark from GAB_6192_CoC_MAT A Left Join GAB_6192_Material B On A.Part = B.Part and A.MDS_ID = B.ID WHERE Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtMatComp","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtMatComp","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtMatComp.RowCount,1,V.Local.iCount)
+		
+		F.Intrinsic.Control.If(V.DataTable.dtMatComp.RowCount,=,0)
+			F.Intrinsic.String.Build("Select Job, Suffix, Date_Opened, Part From V_Job_Header where Parent_WO = '{0}' and Parent_Suffix_Parent = '{1}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+			F.Intrinsic.Control.If(V.DataTable.dtTemp.RowCount,>,0)
+				F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+					F.Data.DataTable.AddRow("dtMatComp","Seq",1, "WO",V.DataTable.dtTemp(V.Local.i1).Job!FieldValTrim, "Suffix",V.DataTable.dtTemp(V.Local.i1).Suffix!FieldValTrim, "WO_Date",V.DataTable.dtTemp(V.Local.i1).Date_Opened!FieldValPervasiveDate, "Part",V.DataTable.dtTemp(V.Local.i1).Part!FieldValTrim, "ID",0)
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf	
+			F.Data.DataTable.Close("dtTemp")
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtMatComp","GSGC","GSGCMatCmp","GV","gvMatComp")
+		
+		F.Intrinsic.String.Build("select A.Seq, A.WO, A.Suffix, A.WO_Date, B.Part, B.ID, B.CSP, B.Rev, B.Description, B.Supplier, B.PO, B.Certificate, B.CSP_Remark from GAB_6192_CoC_Coat A Left Join GAB_6192_Coating B On A.Part = B.Part and A.Coating_ID = B.ID WHERE Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtCoatComp","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtCoatComp","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtCoatComp.RowCount,1,V.Local.iCount)		
+		
+		F.Intrinsic.Control.If(V.DataTable.dtCoatComp.RowCount,=,0)
+			F.Intrinsic.String.Build("Select Job, Suffix, Date_Opened, Part From V_Job_Header where Parent_WO = '{0}' and Parent_Suffix_Parent = '{1}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+			F.Intrinsic.Control.If(V.DataTable.dtTemp.RowCount,>,0)
+				F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+					F.Data.DataTable.AddRow("dtCoatComp","Seq",1, "WO",V.DataTable.dtTemp(V.Local.i1).Job!FieldValTrim, "Suffix",V.DataTable.dtTemp(V.Local.i1).Suffix!FieldValTrim, "WO_Date",V.DataTable.dtTemp(V.Local.i1).Date_Opened!FieldValPervasiveDate, "Part",V.DataTable.dtTemp(V.Local.i1).Part!FieldValTrim, "ID",0, "Certificate",0)
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf	
+			F.Data.DataTable.Close("dtTemp")
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtCoatComp","GSGC","GSGCCoatCmp","GV","gvCoatComp")		
+		
+		F.Intrinsic.String.Build("select A.Seq, A.WO, A.Suffix, A.WO_Date, B.Part, B.ID, B.NDE, B.Rev, B.Supplier, B.PO, B.Insp_Lvl, B.Expiry_Date, B.NDE_Remark from GAB_6192_CoC_NDE A Left Join GAB_6192_NDE B On A.Part = B.Part and A.NDE_ID = B.ID WHERE Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtNDEComp","conx",V.Local.sSQL,True)		
+		F.Data.DataTable.AddColumn("dtNDEComp","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtNDEComp.RowCount,1,V.Local.iCount)
+		
+		F.Intrinsic.Control.If(V.DataTable.dtNDEComp.RowCount,=,0)
+			F.Intrinsic.String.Build("Select Job, Suffix, Date_Opened, Part From V_Job_Header where Parent_WO = '{0}' and Parent_Suffix_Parent = '{1}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+			F.Intrinsic.Control.If(V.DataTable.dtTemp.RowCount,>,0)
+				F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+					F.Data.DataTable.AddRow("dtNDEComp","Seq",1, "WO",V.DataTable.dtTemp(V.Local.i1).Job!FieldValTrim, "Suffix",V.DataTable.dtTemp(V.Local.i1).Suffix!FieldValTrim, "WO_Date",V.DataTable.dtTemp(V.Local.i1).Date_Opened!FieldValPervasiveDate, "Part",V.DataTable.dtTemp(V.Local.i1).Part!FieldValTrim, "ID",0, "Expiry_Date","1900-01-01")
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf		
+			F.Data.DataTable.Close("dtTemp")
+		F.Intrinsic.Control.EndIf	
+		
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtNDEComp","GSGC","GSGCNDECmp","GV","gvNDEComp")		
+				
+		F.Intrinsic.String.Build("select A.Seq, A.WO, A.Suffix, A.WO_Date, B.Part, B.ID, B.QCP, B.QCP_Rev, B.Insp, B.Insp_Rev, B.MN15, B.MN15_Rev, B.TPI_Date, B.Ron_ID from GAB_6192_CoC_QCP A Left Join GAB_6192_QCP B On A.Part = B.Part and A.QCP_ID = B.ID WHERE Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)	
+		F.Data.DataTable.CreateFromSQL("dtQCPComp","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtQCPComp","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtQCPComp.RowCount,1,V.Local.iCount)		
+
+		F.Intrinsic.Control.If(V.DataTable.dtQCPComp.RowCount,=,0)
+			F.Intrinsic.String.Build("Select Job, Suffix, Date_Opened, Part From V_Job_Header where Parent_WO = '{0}' and Parent_Suffix_Parent = '{1}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+			F.Intrinsic.Control.If(V.DataTable.dtTemp.RowCount,>,0)
+				F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+					F.Data.DataTable.AddRow("dtQCPComp","Seq",1, "WO",V.DataTable.dtTemp(V.Local.i1).Job!FieldValTrim, "Suffix",V.DataTable.dtTemp(V.Local.i1).Suffix!FieldValTrim, "WO_Date",V.DataTable.dtTemp(V.Local.i1).Date_Opened!FieldValPervasiveDate, "Part",V.DataTable.dtTemp(V.Local.i1).Part!FieldValTrim, "ID",0, "TPI_Date","1900-01-01")
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf	
+			F.Data.DataTable.Close("dtTemp")
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtQCPComp","GSGC","GSGCQCPCmp","GV","gvQCPComp")
+
+		F.Intrinsic.String.Build("select A.Seq, A.WO, A.Suffix, A.WO_Date, B.Part, B.ID, B.MT16, B.Rev, B.Supplier, B.PO, B.Certificate from GAB_6192_CoC_MT16 A Left Join GAB_6192_MT16 B On A.Part = B.Part and A.MT16_ID = B.ID WHERE Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}' order by ID",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sSQL)		
+		F.Data.DataTable.CreateFromSQL("dtMT16Comp","conx",V.Local.sSQL,True)
+		F.Data.DataTable.AddColumn("dtMT16Comp","Delete","String")
+		F.Intrinsic.Math.Add(V.DataTable.dtMT16Comp.RowCount,1,V.Local.iCount)
+'		F.Data.DataTable.AddRow("dtMT16Comp","Seq",1,"ID",0)
+
+		F.Intrinsic.Control.If(V.DataTable.dtMT16Comp.RowCount,=,0)
+			F.Intrinsic.String.Build("Select Job, Suffix, Date_Opened, Part From V_Job_Header where Parent_WO = '{0}' and Parent_Suffix_Parent = '{1}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Local.sSQL)
+			F.Data.DataTable.CreateFromSQL("dtTemp","conx",V.Local.sSQL,True)
+			F.Intrinsic.Control.If(V.DataTable.dtTemp.RowCount,>,0)
+				F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtTemp.RowCount--,1)
+					F.Data.DataTable.AddRow("dtMT16Comp","Seq",1, "WO",V.DataTable.dtTemp(V.Local.i1).Job!FieldValTrim, "Suffix",V.DataTable.dtTemp(V.Local.i1).Suffix!FieldValTrim, "WO_Date",V.DataTable.dtTemp(V.Local.i1).Date_Opened!FieldValPervasiveDate, "Part",V.DataTable.dtTemp(V.Local.i1).Part!FieldValTrim, "ID",0)
+				F.Intrinsic.Control.Next(V.Local.i1)
+			F.Intrinsic.Control.EndIf	
+			F.Data.DataTable.Close("dtTemp")
+		F.Intrinsic.Control.EndIf	
+		
+		F.Intrinsic.Control.CallSub(FormatGrids,"DT","dtMT16Comp","GSGC","GSGCMT16Comp","GV","gvMT16Comp")
+				
+	Gui.form..Visible(True)
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End
+
+	F.Intrinsic.Control.EndTry
+Program.Sub.LoadRecords.End
+
+Program.Sub.FormatGrids.Start
+	V.Local.sError.Declare
+	
+	V.Local.iRet.Declare
+	V.Local.iCnt.Declare
+	V.Local.sColumns.Declare
+	V.Local.bHold.Declare
+	v.Local.sRet.Declare(String)
+	
+	Gui.form.[V.Args.GSGC].AddGridViewFromDataTable(V.Args.GV,V.Args.DT)
+	Gui.form.[V.Args.GSGC].SuspendLayout()
+	Gui.form.[V.Args.GSGC].SetGridViewProperty(V.Args.GV,"MultiSelect",True)
+	Gui.form.[V.Args.GSGC].SetGridViewProperty(V.Args.GV,"OptionBehaviorEditable",True)
+	Gui.form.[V.Args.GSGC].SetGridViewProperty(V.Args.GV,"AllowSort",True)
+	Gui.form.[V.Args.GSGC].SetGridViewProperty(V.Args.GV,"AllowFilter",True)
+	Gui.form.[V.Args.GSGC].SetGridViewProperty(V.Args.GV,"OptionsDetailShowDetailTabs",False)
+	Gui.form.[V.Args.GSGC].SetGridViewProperty(V.Args.GV,"OptionsViewShowGroupPanel",False)
+	Gui.form.[V.Args.GSGC].SetGridViewProperty(V.Args.GV,"OptionsViewColumnAutoWidth",False)
+	
+	'Loop through columns names by using the V.DataTable.dtName.FieldNames
+	F.Intrinsic.String.Split(V.DataTable.[V.Args.DT].FieldNames,"*!*",V.Local.sColumns)
+	F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sColumns.UBound,1)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,V.Local.sColumns(V.Local.iCnt),"HeaderFontBold",True)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,V.Local.sColumns(V.Local.iCnt),"AllowEdit",False)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,V.Local.sColumns(V.Local.iCnt),"ReadOnly",True)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,V.Local.sColumns(V.Local.iCnt),"HeaderHAlignment","Center")				
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+'	Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Seq","Visible",False)
+'	Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"ID","Visible",False)
+	Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Delete","ShowCaption",False)
+	Gui.form.[V.Args.GSGC].ColumnEdit(V.Args.GV,"Delete","EditorButton","Delete")
+	
+	F.Intrinsic.Control.If(V.Args.DT,=,"dtMatFG")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS","Caption","Material Specification (MDS #)")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS","MinWidth","150")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS","CellBackColor","LightBlue")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE","CellFontColor","orange")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","Caption","MDS Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS","Caption","CMS #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS","MinWidth","150")
+				
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS_Rev","Caption","CMS Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS_Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","Caption","Supplier")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","Caption","PO #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Heat","Caption","Heat #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Heat","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS_Remark","Caption","MDS Remark")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS_Remark","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS_Remark","Caption","CMS Remark")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS_Remark","MinWidth","150")
+
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtCoatFG")
+
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP","Caption","CSP #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP","MinWidth","150")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP","CellBackColor","LightBlue")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","Caption","CSP Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","MinWidth","50")
+	
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Description","Caption","Description")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Description","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","Caption","Supplier")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","Caption","PO #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Certificate","Caption","Certificate?")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Certificate","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP_Remark","Caption","CSP Remark")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP_Remark","MinWidth","150")
+		
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtNDEFG")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE","Caption","NDE #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE","MinWidth","150")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE","CellBackColor","LightBlue")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","Caption","NDE Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","Caption","Supplier")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","Caption","PO")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp_Lvl","Caption","Inspection Level")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp_Lvl","MinWidth","75")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Expiry_Date","Caption","Cert. Expiry Date")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Expiry_Date","MinWidth","100")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Expiry_Date","DisplayCustomDatetime","d")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE_Remark","Caption","NDE Remark")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE_Remark","MinWidth","150")
+		
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtQCPFG")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP","Caption","QCP #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP","MinWidth","150")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP","CellBackColor","LightBlue")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP_Rev","Caption","QCP Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP_Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp","Caption","Inspection Matrix")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp_Rev","Caption","Insp Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp_Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MN15","Caption","MN15")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MN15","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MN15_Rev","Caption","MN15 Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MN15_Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"TPI_Date","Caption","TPI Witness Date")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"TPI_Date","MinWidth","100")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"TPI_Date","DisplayCustomDatetime","d")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"RON_ID","Caption","RON / eWaiver ID")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"RON_ID","MinWidth","100")
+		
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtMT16")
+	
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Seq","Visible",False)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Delete","Visible",False)
+		
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MT16","CellBackColor","LightBlue")
+		
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtMatComp")
+	
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Seq","Visible",False)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Delete","Visible",False)	
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS","Caption","Material Specification (MDS #)")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS","MinWidth","150")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS","CellBackColor","LightBlue")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","Caption","MDS Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS","Caption","CMS #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS_Rev","Caption","CMS Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS_Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","Caption","Supplier")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","Caption","PO #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Heat","Caption","Heat #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Heat","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS_Remark","Caption","MDS Remark")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MDS_Remark","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS_Remark","Caption","CMS Remark")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CMS_Remark","MinWidth","150")
+
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtCoatComp")
+	
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Seq","Visible",False)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Delete","Visible",False)	
+
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP","Caption","CSP #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP","MinWidth","150")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP","CellBackColor","LightBlue")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","Caption","CSP Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","MinWidth","50")
+	
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Description","Caption","Description")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Description","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","Caption","Supplier")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","Caption","PO #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Certificate","Caption","Certificate?")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Certificate","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP_Remark","Caption","CSP Remark")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"CSP_Remark","MinWidth","150")
+		
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtNDEComp")
+	
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Seq","Visible",False)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Delete","Visible",False)	
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE","Caption","NDE #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE","MinWidth","150")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE","CellBackColor","LightBlue")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","Caption","NDE Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","Caption","Supplier")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Supplier","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","Caption","PO")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"PO","MinWidth","100")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp_Lvl","Caption","Inspection Level")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp_Lvl","MinWidth","75")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Expiry_Date","Caption","Cert. Expiry Date")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Expiry_Date","MinWidth","100")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Expiry_Date","DisplayCustomDatetime","d")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE_Remark","Caption","NDE Remark")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"NDE_Remark","MinWidth","150")
+		
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtQCPComp")
+	
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Seq","Visible",False)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Delete","Visible",False)
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP","Caption","QCP #")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP","MinWidth","150")
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP","CellBackColor","LightBlue")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP_Rev","Caption","QCP Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"QCP_Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp","Caption","Inspection Matrix")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp_Rev","Caption","Insp Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Insp_Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MN15","Caption","MN15")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MN15","MinWidth","150")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MN15_Rev","Caption","MN15 Rev")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MN15_Rev","MinWidth","50")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"TPI_Date","Caption","TPI Witness Date")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"TPI_Date","MinWidth","100")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"TPI_Date","DisplayCustomDatetime","d")
+		
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"RON_ID","Caption","RON / eWaiver ID")
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"RON_ID","MinWidth","100")	
+		
+	F.Intrinsic.Control.ElseIf(V.Args.DT,=,"dtMT16Comp")
+	
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Seq","Visible",False)
+		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"Delete","Visible",False)
+		
+'		Gui.form.[V.Args.GSGC].SetColumnProperty(V.Args.GV,"MT16","CellBackColor","LightBlue")
+		
+	F.Intrinsic.Control.EndIf
+
+	Gui.form.[V.Args.GSGC].ResumeLayout()
+	Gui.form.[V.Args.GSGC].MainView(V.Args.GV)
+Program.Sub.FormatGrids.End
+
+Program.Sub.GSGCMaterial_Click.Start
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sRow.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+V.Local.sPart.Declare
+V.Local.string.Declare
+
+F.Intrinsic.String.Build(V.Screen.Form!txtPart.Text,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+
+F.Intrinsic.Control.If(V.Args.ControlName,=,"GSGCMATERIAL")
+	F.Intrinsic.Control.If(V.Args.Column,=,"MDS")
+		F.Intrinsic.String.Split("ID*!*Material Specification (MDS#)*!*MDS Rev*!*CMS*!*CMS Rev*!*Supplier*!*PO*!*Heat*!*MDS Remark*!*CMS Remark","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, MDS, REV, CMS, CMS_REV, SUPPLIER, PO, HEAT, MDS_REMARK, CMS_REMARK from GAB_6192_MATERIAL WHERE PART = '{0}' order by ID",V.Local.sPart,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a MDS Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				F.Data.DataTable.SetValue("dtMatFg",V.Args.RowIndex,"ID",V.Local.sRet(0), "MDS",V.Local.sRet(1).Trim, "Rev",V.Local.sRet(2).Trim, "CMS",V.Local.sRet(3).Trim, "CMS_Rev",V.Local.sRet(4).Trim, "Supplier",V.Local.sRet(5).Trim, "PO",V.Local.sRet(6).Trim, "Heat",V.Local.sRet(7).Trim, "MDS_Remark",V.Local.sRet(8).Trim, "CMS_Remark",V.Local.sRet(9).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMatFg.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtMatFg(V.DataTable.dtMatFg.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+					F.Data.DataTable.AddRow("dtMatFg","Seq",V.Local.iSeq,"ID",0)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtMatFg",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtMatFg")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseiF(v.Args.ControlName,=,"GSGCMATCMP")
+	F.Intrinsic.Control.If(V.Args.Column,=,"MDS")
+		F.Intrinsic.String.Split("ID*!*Material Specification (MDS#)*!*MDS Rev*!*CMS*!*CMS Rev*!*Supplier*!*PO*!*Heat*!*MDS Remark*!*CMS Remark","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, MDS, REV, CMS, CMS_REV, SUPPLIER, PO, HEAT, MDS_REMARK, CMS_REMARK from GAB_6192_MATERIAL WHERE PART = '{0}' order by ID",V.DataTable.dtMatComp(V.Args.RowIndex).Part!FieldValTrim,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a MDS Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				F.Data.DataTable.SetValue("dtMatComp",V.Args.RowIndex,"ID",V.Local.sRet(0), "MDS",V.Local.sRet(1).Trim, "Rev",V.Local.sRet(2).Trim, "CMS",V.Local.sRet(3).Trim, "CMS_Rev",V.Local.sRet(4).Trim, "Supplier",V.Local.sRet(5).Trim, "PO",V.Local.sRet(6).Trim, "Heat",V.Local.sRet(7).Trim, "MDS_Remark",V.Local.sRet(8).Trim, "CMS_Remark",V.Local.sRet(9).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMatComp.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtMatComp(V.DataTable.dtMatComp.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+'					F.Data.DataTable.AddRow("dtMatComp","Seq",V.Local.iSeq)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtMatComp",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtMatComp")
+	F.Intrinsic.Control.EndIf	
+F.Intrinsic.Control.EndIf
+Program.Sub.GSGCMaterial_Click.End
+
+Program.Sub.GSGCCoating_Click.Start
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sRow.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+V.Local.sPart.Declare
+V.Local.string.Declare
+
+F.Intrinsic.String.Build(V.Screen.Form!txtPart.Text,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+
+F.Intrinsic.Control.If(V.Args.ControlName,=,"GSGCCOATING")
+	F.Intrinsic.Control.If(V.Args.Column,=,"CSP")
+		F.Intrinsic.String.Split("ID*!*CSP#*!*CSP Rev*!*Description*!*Supplier*!*PO*!*Certificate*!*CSP Remark","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, CSP, REV, Description, Supplier, PO, Certificate, CSP_REMARK from GAB_6192_Coating WHERE PART = '{0}' order by ID",V.Local.sPart,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a Coating Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")	
+				F.Data.DataTable.SetValue("dtCoatFg",V.Args.RowIndex,"ID",V.Local.sRet(0), "CSP",V.Local.sRet(1).Trim, "Rev",V.Local.sRet(2).Trim, "Description",V.Local.sRet(3).Trim, "Supplier",V.Local.sRet(4).Trim, "PO",V.Local.sRet(5).Trim, "Certificate",V.Local.sRet(6), "CSP_Remark",V.Local.sRet(7).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtCoatFg.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtCoatFg(V.DataTable.dtCoatFg.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+					F.Data.DataTable.AddRow("dtCoatFg","Seq",V.Local.iSeq,"ID",0, "Certificate",0)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtCoatFg",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtCoatFg")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else(V.Args.ControlName,=,"GSGCCOATCMP")
+	F.Intrinsic.Control.If(V.Args.Column,=,"CSP")
+		F.Intrinsic.String.Split("ID*!*CSP#*!*CSP Rev*!*Description*!*Supplier*!*PO*!*Certificate*!*CSP Remark","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, CSP, REV, Description, Supplier, PO, Certificate, CSP_REMARK from GAB_6192_Coating WHERE PART = '{0}' order by ID",V.DataTable.dtCoatComp(V.Args.RowIndex).Part!FieldValTrim,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a Coating Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")	
+				F.Data.DataTable.SetValue("dtCoatComp",V.Args.RowIndex,"ID",V.Local.sRet(0), "CSP",V.Local.sRet(1).Trim, "Rev",V.Local.sRet(2).Trim, "Description",V.Local.sRet(3).Trim, "Supplier",V.Local.sRet(4).Trim, "PO",V.Local.sRet(5).Trim, "Certificate",V.Local.sRet(6), "CSP_Remark",V.Local.sRet(7).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtCoatComp.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtCoatComp(V.DataTable.dtCoatComp.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+'					F.Data.DataTable.AddRow("dtCoatComp","Seq",V.Local.iSeq, "Certificate",0)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtCoatComp",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtCoatComp")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.GSGCCoating_Click.End
+
+Program.Sub.GSGCNDE_Click.Start
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sRow.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+V.Local.sPart.Declare
+V.Local.string.Declare
+
+F.Intrinsic.String.Build(V.Screen.Form!txtPart.Text,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+
+F.Intrinsic.Control.If(V.Args.ControlName,=,"GSGCNDE")
+	F.Intrinsic.Control.If(V.Args.Column,=,"NDE")
+		F.Intrinsic.String.Split("ID*!*NDE #*!*NDE Rev*!*Supplier*!*PO*!*Inspection Level*!*Expiry Date*!*NDE Remark","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, NDE, Rev, Supplier, PO, Insp_Lvl, Expiry_Date, NDE_Remark from GAB_6192_NDE WHERE PART = '{0}' order by ID",V.Local.sPart,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a NDE Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				F.Data.DataTable.SetValue("dtNDEFg",V.Args.RowIndex,"ID",V.Local.sRet(0), "NDE",V.Local.sRet(1).Trim, "Rev",V.Local.sRet(2).Trim, "Supplier",V.Local.sRet(3).Trim, "PO",V.Local.sRet(4).Trim, "Insp_Lvl",V.Local.sRet(5).Trim, "Expiry_Date",V.Local.sRet(6), "NDE_Remark",V.Local.sRet(7).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtNDEFg.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtNDEFg(V.DataTable.dtNDEFg.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+					F.Data.DataTable.AddRow("dtNDEFg","Seq",V.Local.iSeq, "ID",0, "Expiry_Date","1900-01-01")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtNDEFg",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtNDEFg")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else(V.Args.ControlName,=,"GSGCNDECMP")
+	F.Intrinsic.Control.If(V.Args.Column,=,"NDE")
+		F.Intrinsic.String.Split("ID*!*NDE #*!*NDE Rev*!*Supplier*!*PO*!*Inspection Level*!*Expiry Date*!*NDE Remark","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, NDE, Rev, Supplier, PO, Insp_Lvl, Expiry_Date, NDE_Remark from GAB_6192_NDE WHERE PART = '{0}' order by ID",V.DataTable.dtNDEComp(V.Args.RowIndex).Part!FieldValTrim,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a NDE Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				F.Data.DataTable.SetValue("dtNDEComp",V.Args.RowIndex,"ID",V.Local.sRet(0), "NDE",V.Local.sRet(1).Trim, "Rev",V.Local.sRet(2).Trim, "Supplier",V.Local.sRet(3).Trim, "PO",V.Local.sRet(4).Trim, "Insp_Lvl",V.Local.sRet(5).Trim, "Expiry_Date",V.Local.sRet(6), "NDE_Remark",V.Local.sRet(7).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtNDEComp.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtNDEComp(V.DataTable.dtNDEComp.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+'					F.Data.DataTable.AddRow("dtNDEComp","Seq",V.Local.iSeq, "Expiry_Date","1900-01-01")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtNDEComp",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtNDEComp")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.GSGCNDE_Click.End
+
+Program.Sub.GSGCQCP_Click.Start
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sRow.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+V.Local.sPart.Declare
+V.Local.string.Declare
+
+F.Intrinsic.String.Build(V.Screen.Form!txtPart.Text,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+
+F.Intrinsic.Control.If(V.Args.ControlName,=,"GSGCQCP")
+	F.Intrinsic.Control.If(V.Args.Column,=,"QCP")
+		F.Intrinsic.String.Split("ID*!*QCP #*!*QCP Rev*!*Inspection #*!*Inspection Rev*!*MN15*!*MN15 Rev*!*TPI Date*!*RON ID","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, QCP, QCP_Rev, Insp, Insp_Rev, MN15, MN15_rev, TPI_Date, RON_ID from GAB_6192_QCP WHERE PART = '{0}' order by ID",V.Local.sPart,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a QCP Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				F.Data.DataTable.SetValue("dtQCPFg",V.Args.RowIndex,"ID",V.Local.sRet(0), "QCP",V.Local.sRet(1).Trim, "QCP_Rev",V.Local.sRet(2).Trim, "Insp",V.Local.sRet(3).Trim, "Insp_Rev",V.Local.sRet(4).Trim, "MN15",V.Local.sRet(5).Trim, "MN15_Rev",V.Local.sRet(6), "TPI_Date",V.Local.sRet(7).Trim, "RON_ID",V.Local.sRet(8).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtQCPFg.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtQCPFg(V.DataTable.dtQCPFg.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+					F.Data.DataTable.AddRow("dtQCPFg","Seq",V.Local.iSeq, "ID",0, "TPI_Date","1900-01-01")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtQCPFg",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtQCPFg")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Args.ControlName,=,"GSGCQCPCMP")	
+	F.Intrinsic.Control.If(V.Args.Column,=,"QCP")
+		F.Intrinsic.String.Split("ID*!*QCP #*!*QCP Rev*!*Inspection #*!*Inspection Rev*!*MN15*!*MN15 Rev*!*TPI Date*!*RON ID","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, QCP, QCP_Rev, Insp, Insp_Rev, MN15, MN15_rev, TPI_Date, RON_ID from GAB_6192_QCP WHERE PART = '{0}' order by ID",V.DataTable.dtQCPComp(V.Args.RowIndex).Part!FieldValTrim,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a QCP Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				F.Data.DataTable.SetValue("dtQCPComp",V.Args.RowIndex,"ID",V.Local.sRet(0), "QCP",V.Local.sRet(1).Trim, "QCP_Rev",V.Local.sRet(2).Trim, "Insp",V.Local.sRet(3).Trim, "Insp_Rev",V.Local.sRet(4).Trim, "MN15",V.Local.sRet(5).Trim, "MN15_Rev",V.Local.sRet(6), "TPI_Date",V.Local.sRet(7).Trim, "RON_ID",V.Local.sRet(8).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtQCPComp.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtQCPComp(V.DataTable.dtQCPComp.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+'					F.Data.DataTable.AddRow("dtQCPComp","Seq",V.Local.iSeq, "TPI_Date","1900-01-01")
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtQCPFg",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtQCPFg")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+Program.Sub.GSGCQCP_Click.End
+
+Program.Sub.GSGCMT16_Click.Start
+V.Local.iSeq.Declare
+V.Local.iWidths.Declare
+V.Local.sFilter.Declare
+V.Local.sRet.Declare
+V.Local.sRow.Declare
+V.Local.sSQL.Declare
+V.Local.sTitles.Declare
+V.Local.sPart.Declare
+V.Local.string.Declare
+
+F.Intrinsic.String.Build(V.Screen.Form!txtPart.Text,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+
+F.Intrinsic.Control.If(V.Args.ControlName,=,"GSGCMT16")
+	F.Intrinsic.Control.If(V.Args.Column,=,"MT16")
+		F.Intrinsic.String.Split("ID*!*MT16 #*!*MT16 Rev*!*Supplier*!*PO*!*Certificate","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, MT16, Rev, Supplier, PO, Certificate from GAB_6192_MT16 WHERE PART = '{0}' order by ID",V.Local.sPart,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a MT16 Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				F.Data.DataTable.SetValue("dtMT16",V.Args.RowIndex,"ID",V.Local.sRet(0), "MT16",V.Local.sRet(1).Trim, "Rev",V.Local.sRet(2).Trim, "Supplier",V.Local.sRet(3).Trim, "PO",V.Local.sRet(4).Trim, "Certificate",V.Local.sRet(5).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMT16.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtMT16(V.DataTable.dtMT16.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+					F.Data.DataTable.AddRow("dtMT16","Seq",V.Local.iSeq, "ID",0)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtMT16",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtMT16")
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.ElseIf(V.Args.ControlName,=,"GSGCMT16COMP")
+	F.Intrinsic.Control.If(V.Args.Column,=,"MT16")
+		F.Intrinsic.String.Split("ID*!*MT16 #*!*MT16 Rev*!*Supplier*!*PO*!*Certificate","*!*",V.Local.sTitles)
+		F.Intrinsic.String.Split("1000*!*2000*!*1000*!*1000*!*1000*!*1000","*!*",V.Local.iWidths)
+		F.Intrinsic.String.Build("select ID, MT16, Rev, Supplier, PO, Certificate from GAB_6192_MT16 WHERE PART = '{0}' order by ID",V.DataTable.dtMT16Comp(V.Args.RowIndex).Part!FieldValTrim,V.Local.string)
+		F.Intrinsic.UI.Browser("Select a MT16 Spec","Conx",V.Local.string,V.Local.sTitles,V.Local.iWidths,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+			F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+
+			F.Intrinsic.Control.If(V.Local.sRow,<>,"***NORETURN***")
+				F.Data.DataTable.SetValue("dtMT16Comp",V.Args.RowIndex,"ID",V.Local.sRet(0), "MT16",V.Local.sRet(1).Trim, "Rev",V.Local.sRet(2).Trim, "Supplier",V.Local.sRet(3).Trim, "PO",V.Local.sRet(4).Trim, "Certificate",V.Local.sRet(5).Trim)
+				F.Intrinsic.Control.If(V.Args.RowIndex,=,V.DataTable.dtMT16Comp.RowCount--)
+					F.Intrinsic.Math.Add(V.DataTable.dtMT16Comp(V.DataTable.dtMT16Comp.RowCount--).Seq!FieldValLong,1,V.Local.iSeq)
+'					F.Data.DataTable.AddRow("dtMT16Comp","Seq",V.Local.iSeq)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.ElseIf(V.Args.Column,=,"Delete")
+		F.Data.DataTable.DeleteRow("dtMT16Comp",V.Args.RowIndex)
+		F.Data.DataTable.AcceptChanges("dtMT16Comp")
+	F.Intrinsic.Control.EndIf	
+F.Intrinsic.Control.EndIf
+Program.Sub.GSGCMT16_Click.End
+
+Program.Sub.SaveButton_Click.Start
+V.Local.i1.Declare
+V.Local.sArea.Declare
+V.Local.sSQL.Declare
+V.Local.sCategory.Declare
+V.Local.iCheck.Declare
+V.Local.sDesc.Declare
+v.Local.sPOLine.Declare
+V.Local.sCreated.Declare
+V.Local.sPart.Declare
+
+F.Intrinsic.UI.InvokeWaitDialog("Processing Records...")
+Gui.Form..Enabled(False)
+V.Local.sArea.Set(V.Screen.F_SFDC!txtArea.Text)
+V.Local.sCategory.Set(V.Screen.F_SFDC!ddlCategory.Text)
+V.Local.sDesc.Set(V.Screen.Form!txtDesc.Text)
+F.Intrinsic.String.Build("{0}0",V.Screen.Form!txtPOLine.Text,v.Local.sPOLine)
+V.Local.sPart.Set(V.Screen.Form!txtPart.Text)
+F.Intrinsic.String.RPad(V.Local.sPart.Trim," ",17,V.Local.sPart)
+F.Intrinsic.String.Build("{0}{1}",V.Local.sPart,V.Screen.Form!txtPartRev.Text,V.Local.sPart)
+
+F.Intrinsic.String.Build("select * from GAB_6192_COC where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' and Part = '{3}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.OpenLocalRecordsetRW("rst",V.Local.sSQL)
+
+F.Intrinsic.Control.If(V.ODBC.conx!rst.EOF,=,True)
+	F.Intrinsic.String.Build("insert into GAB_6192_COC(WO, Suffix, WO_Date, Part, Description, SO, PO, PO_Line, Drawing, Drawing_Rev, Outside_No, Country, Lot, Hard_Result, Hard_Spec, Thread_Dtl, Thread_STW, Created_By, Created_Date, Qty) values('{0}', '{1}', '{2}', '{3}', '{4}', '{5}', '{6}', '{7}',  '{8}', '{9}', '{10}', '{11}', '{12}', '{13}', '{14}', '{15}', '{16}', '{17}', '{18}', {19})",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.Local.sPart.Trim, V.Local.sDesc.Trim, V.Global.sSO.Trim, V.Screen.Form!txtPO.Text, v.Local.sPOLine, V.Screen.Form!ddlDrawing.Text, V.Screen.Form!ddlDrawingRev.Text, V.Screen.Form!ddlOutside.Text, V.Screen.form!txtCountry.Text, V.Screen.Form!txtLot.Text, V.Screen.Form!ddlHardResult.Text, V.Screen.Form!ddlHardSpec.Text, V.Screen.Form!ddlThreadDtl.Text, V.Screen.Form!ddlThreadSTW.Text, V.Caller.User.Trim, V.Ambient.Date.PervasiveDate, V.Screen.Form!txtPOQty.Text, V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+			
+F.Intrinsic.Control.Else
+		
+	F.Intrinsic.String.Build("Update GAB_6192_COC Set Description = '{4}', Drawing = '{8}', Drawing_Rev = '{9}', Outside_No = '{10}', Country = '{11}', Lot = '{12}', Hard_Result = '{13}', Hard_Spec = '{14}', Thread_Dtl = '{15}', Thread_STW = '{16}' where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' and Part = '{3}'",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.Local.sPart.Trim, V.Local.sDesc.Trim, V.Global.sSO.Trim, V.Screen.Form!txtPO.Text, V.Screen.Form!txtPOLine.Text, V.Screen.Form!ddlDrawing.Text, V.Screen.Form!ddlDrawingRev.Text, V.Screen.Form!ddlOutside.Text, V.Screen.form!txtCountry.Text, V.Screen.Form!txtLot.Text, V.Screen.Form!ddlHardResult.Text, V.Screen.Form!ddlHardSpec.Text, V.Screen.Form!ddlThreadDtl.Text, V.Screen.Form!ddlThreadSTW.Text, V.Local.sSQL)
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+F.Intrinsic.Control.EndIf
+F.ODBC.conx!rst.Close
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_Mat where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' and Part = '{3}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_Mat where Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+'MATFG
+F.Intrinsic.Control.If(V.DataTable.dtMatFG.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtMatFG.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtMatFG(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_Mat(WO, Suffix, WO_Date, SEQ, Part, MDS_ID) values('{0}', '{1}', '{2}', {3}, '{4}', {5})",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.DataTable.dtMatFG(V.Local.i1).Seq!FieldVal, V.Local.sPart.Trim, V.DataTable.dtMatFG(V.Local.i1).ID!FieldVal, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+'MATCOMP
+F.Intrinsic.Control.If(V.DataTable.dtMatCOMP.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtMatCOMP.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtMatCOMP(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_Mat(WO, Suffix, WO_Date, SEQ, Part, MDS_ID, PARENT_WO, PARENT_SUFFIX) values('{0}', '{1}', '{2}', {3}, '{4}', {5}, '{6}', '{7}')",V.DataTable.dtMatCOMP(V.Local.i1).WO!FieldValTRIM, V.DataTable.dtMatCOMP(V.Local.i1).SUFFIX!FieldValTRIM, V.DataTable.dtMatCOMP(V.Local.i1).WO_DATE!FieldValPervasiveDate, V.DataTable.dtMatCOMP(V.Local.i1).Seq!FieldVal, V.DataTable.dtMatCOMP(V.Local.i1).Part!FieldVal, V.DataTable.dtMatCOMP(V.Local.i1).ID!FieldVal, V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_COAT where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' and Part = '{3}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_COAT where Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+'COATFG
+F.Intrinsic.Control.If(V.DataTable.dtCoatFG.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtCoatFG.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtCoatFG(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_COAT(WO, Suffix, WO_Date, SEQ, Part, Coating_ID) values('{0}', '{1}', '{2}', {3}, '{4}', {5})",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.DataTable.dtCoatFG(V.Local.i1).Seq!FieldVal, V.Local.sPart.Trim, V.DataTable.dtCoatFG(V.Local.i1).ID!FieldVal, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)	
+F.Intrinsic.Control.EndIf	
+	
+'COATCOMP
+F.Intrinsic.Control.If(V.DataTable.dtCoatCOMP.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtCoatCOMP.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtCoatCOMP(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_COAT(WO, Suffix, WO_Date, SEQ, Part, Coating_ID, PARENT_WO, PARENT_SUFFIX) values('{0}', '{1}', '{2}', {3}, '{4}', {5}, '{6}', '{7}')", V.DataTable.dtCOATCOMP(V.Local.i1).WO!FieldValTRIM, V.DataTable.dtCOATCOMP(V.Local.i1).SUFFIX!FieldValTRIM, V.DataTable.dtCOATCOMP(V.Local.i1).WO_DATE!FieldValPervasiveDate, V.DataTable.dtCoatCOMP(V.Local.i1).Seq!FieldVal, V.DataTable.dtCoatCOMP(V.Local.i1).Part!FieldVal, V.DataTable.dtCoatCOMP(V.Local.i1).ID!FieldVal, V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)	
+F.Intrinsic.Control.EndIf	
+	
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_NDE where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' and Part = '{3}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_NDE where Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+''NDEFG
+F.Intrinsic.Control.If(V.DataTable.dtNDEFG.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtNDEFG.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtNDEFG(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_NDE(WO, Suffix, WO_Date, SEQ, Part, NDE_ID) values('{0}', '{1}', '{2}', {3}, '{4}', {5})",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.DataTable.dtNDEFG(V.Local.i1).Seq!FieldVal, V.Local.sPart.Trim, V.DataTable.dtNDEFG(V.Local.i1).ID!FieldVal, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf	
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+''NDECOMP
+F.Intrinsic.Control.If(V.DataTable.dtNDECOMP.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtNDECOMP.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtNDECOMP(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_NDE(WO, Suffix, WO_Date, SEQ, Part, NDE_ID, PARENT_WO, PARENT_SUFFIX) values('{0}', '{1}', '{2}', {3}, '{4}', {5}, '{6}', '{7}')", V.DataTable.dtNDECOMP(V.Local.i1).WO!FieldValTRIM, V.DataTable.dtNDECOMP(V.Local.i1).SUFFIX!FieldValTRIM, V.DataTable.dTNDECOMP(V.Local.i1).WO_DATE!FieldValPervasiveDate, V.DataTable.dtNDECOMP(V.Local.i1).Seq!FieldVal, V.DataTable.dtNDECOMP(V.Local.i1).Part!FieldVal, V.DataTable.dtNDECOMP(V.Local.i1).ID!FieldVal, V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf	
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_QCP where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' and Part = '{3}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_QCP where Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+'QCPFG
+F.Intrinsic.Control.If(V.DataTable.dtQCPFG.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtQCPFG.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtQCPFG(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_QCP(WO, Suffix, WO_Date, SEQ, Part, QCP_ID) values('{0}', '{1}', '{2}', {3}, '{4}', {5})",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.DataTable.dtQCPFG(V.Local.i1).Seq!FieldVal, V.Local.sPart.Trim, V.DataTable.dtQCPFG(V.Local.i1).ID!FieldVal, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+'QCPCOMP
+F.Intrinsic.Control.If(V.DataTable.dtQCPCOMP.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtQCPCOMP.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtQCPCOMP(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_QCP(WO, Suffix, WO_Date, SEQ, Part, QCP_ID, PARENT_WO, PARENT_SUFFIX) values('{0}', '{1}', '{2}', {3}, '{4}', {5}, '{6}', '{7}')", V.DataTable.dtQCPCOMP(V.Local.i1).WO!FieldValTRIM, V.DataTable.dtQCPCOMP(V.Local.i1).SUFFIX!FieldValTRIM, V.DataTable.dTQCPCOMP(V.Local.i1).WO_DATE!FieldValPervasiveDate, V.DataTable.dtQCPCOMP(V.Local.i1).Seq!FieldVal, V.DataTable.dtQCPCOMP(V.Local.i1).Part!FieldVal, V.DataTable.dtQCPComp(V.Local.i1).ID!FieldVal, V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_MT16 where WO = '{0}' and Suffix = '{1}' and WO_Date = '{2}' and Part = '{3}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+F.Intrinsic.String.Build("Delete from GAB_6192_COC_MT16 where Parent_WO = '{0}' and Parent_Suffix = '{1}' and WO_Date = '{2}'",V.Screen.Form!txtWO.Text,V.Screen.Form!txtSuffix.Text,V.Global.dWODate.PervasiveDate,V.Local.sPart.Trim,V.Local.sSQL)
+F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+
+'MT16FG
+F.Intrinsic.Control.If(V.DataTable.dtMT16.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtMT16.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtMT16(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_MT16(WO, Suffix, WO_Date, SEQ, Part, MT16_ID) values('{0}', '{1}', '{2}', {3}, '{4}', {5})",V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.DataTable.dtMT16(V.Local.i1).Seq!FieldVal, V.Local.sPart.Trim, V.DataTable.dtMT16(V.Local.i1).ID!FieldVal, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+'MT16COMP
+F.Intrinsic.Control.If(V.DataTable.dtMT16COMP.RowCount,>,0)
+F.Intrinsic.Control.For(V.Local.i1,0,V.DataTable.dtMT16COMP.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtMT16COMP(V.Local.i1).ID!FieldValTrim,<>,0)
+		F.Intrinsic.String.Build("insert into GAB_6192_COC_MT16(WO, Suffix, WO_Date, SEQ, Part, MT16_ID, PARENT_WO, PARENT_SUFFIX) values('{0}', '{1}', '{2}', {3}, '{4}', {5}, '{6}', '{7}')", V.DataTable.dtMT16COMP(V.Local.i1).WO!FieldValTRIM, V.DataTable.dtMT16COMP(V.Local.i1).SUFFIX!FieldValTRIM, V.DataTable.dTMT16COMP(V.Local.i1).WO_DATE!FieldValPervasiveDate, V.DataTable.dtMT16COMP(V.Local.i1).Seq!FieldVal, V.DataTable.dtMT16COMP(V.Local.i1).Part!FieldVal, V.DataTable.dtMT16COMP(V.Local.i1).ID!FieldVal, V.Screen.Form!txtWO.Text, V.Screen.Form!txtSuffix.Text, V.Global.dWODate.PervasiveDate, V.Local.sSQL)
+		F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.i1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.CloseWaitDialog
+Gui.Form..Enabled(True)
+F.Intrinsic.UI.Msgbox("Data saved successfully!","CoC")
+F.Intrinsic.String.Build("{0}, {1}",V.Caller.User,V.Ambient.Date.PervasiveDate,V.Local.sCreated)
+Gui.Form.lblCreated.Caption(V.Local.sCreated)
+Program.Sub.SaveButton_Click.End
+
+Program.Sub.Unload.Start
+F.ODBC.Connection!conx.Close
+F.Intrinsic.Control.End
+Program.Sub.Unload.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$dyunus$}$20210415150314657$}$xZ6SHi8g7O0Qsxe6AiO2NH3PnOKQRy0TifNioIL/3niptk6IrqnzY/J3rMQrLHbenClK6dFygfM=
+Program.Sub.Comments.End
